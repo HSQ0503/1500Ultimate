@@ -16,8 +16,10 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
+  ChevronUp,
   CircleHelp,
   Clock3,
+  EyeOff,
   Filter,
   Flame,
   Grid2X2,
@@ -28,12 +30,13 @@ import {
   MessageCircle,
   MoreHorizontal,
   PanelLeft,
+  Pause,
   Play,
   Plus,
   Search,
   Send,
+  Settings,
   Sparkles,
-  Sun,
   Target,
   Timer,
   TrendingUp,
@@ -48,6 +51,16 @@ import {
   pricingTarget,
   type Plan,
 } from "@/lib/entitlements";
+import {
+  AppleMark,
+  GoogleMark,
+  LoginBackpack,
+  LoginTarget,
+  MathToolsArt,
+  MicrosoftMark,
+  PricingHeroArt,
+  ReadingWritingArt,
+} from "@/components/illustrations";
 
 type SiteProps = {
   path: string;
@@ -123,24 +136,18 @@ const navSections = [
 function Rail({ path, plan }: { path: string; plan: Plan }) {
   const active = (href: string) =>
     href === "/" ? path === "/" : path.startsWith(href);
-  const planName =
-    plan === "pro" ? "Pro" : plan === "blueprint" ? "Blueprint" : "Free";
 
   return (
     <aside className="rail">
       <Link href={planHref("/", plan)} className="rail-logo">
         <Logo />
       </Link>
-      <section className="blueprint-status" aria-label={`${planName} Blueprint progress`}>
-        <span className="blueprint-status-icon" aria-hidden="true">
-          <Target />
-        </span>
-        <span className="blueprint-status-copy">
-          <small>Your Blueprint</small>
-          <strong>1320 → 1500 goal</strong>
-        </span>
-        <em>{planName}</em>
-      </section>
+      <div className="exam-switcher" aria-label="Exam">
+        <span className="selected">SAT</span>
+        <span>ACT</span>
+        <span>AP</span>
+        <span>IB</span>
+      </div>
       <nav className="rail-nav">
         {navSections.map((section, index) => (
           <div className="nav-section" key={section.title ?? index}>
@@ -153,7 +160,7 @@ function Rail({ path, plan }: { path: string; plan: Plan }) {
                   href={planHref(item.href, plan)}
                   key={item.href}
                 >
-                  <Icon size={14} strokeWidth={1.8} />
+                  <Icon size={16} strokeWidth={1.4} />
                   <span>{item.label}</span>
                   {"chip" in item && item.chip && (
                     <em className="new-chip">{item.chip}</em>
@@ -166,18 +173,18 @@ function Rail({ path, plan }: { path: string; plan: Plan }) {
       </nav>
       <div className="rail-footer">
         <Link href={planHref("/pricing", plan)}>
-          <TrendingUp size={14} />
+          <TrendingUp size={16} strokeWidth={1.4} />
           <span>Upgrade</span>
           <em className="pro-chip">PRO</em>
         </Link>
         <Link href="#book-scott" className="book-scott">
-          <UserRound size={14} />
+          <UserRound size={16} strokeWidth={1.4} />
           <span>Book Scott</span>
         </Link>
         <div className="profile">
           <span className="avatar">AC</span>
           <span>Alex Chen</span>
-          <Sun size={14} />
+          <Settings className="profile-gear" size={16} strokeWidth={1.3} />
         </div>
       </div>
     </aside>
@@ -274,20 +281,15 @@ function Login() {
           <h1>Sign in</h1>
           <div className="oauth-grid">
             <button>
-              <span className="google">G</span>
+              <GoogleMark className="oauth-mark" />
               Google
             </button>
             <button>
-              <span className="apple">●</span>
+              <AppleMark className="oauth-mark apple-mark" />
               Apple
             </button>
             <button>
-              <span className="microsoft">
-                <i />
-                <i />
-                <i />
-                <i />
-              </span>
+              <MicrosoftMark className="oauth-mark microsoft-mark" />
               Microsoft
             </button>
           </div>
@@ -304,27 +306,17 @@ function Login() {
           </p>
         </div>
       </section>
-      <section className="login-art" aria-label="A path toward a 1500 target">
-        <span className="star s1" />
-        <span className="star s2" />
-        <span className="star s3" />
-        <span className="star s4" />
-        <div className="mountain m1" />
-        <div className="mountain m2" />
-        <div className="mountain m3" />
-        <div className="hill back" />
-        <div className="hill front" />
-        <div className="art-target">
-          <Bullseye large />
-        </div>
-        <div className="sign">
+      <section className="art-wrap" aria-label="A path toward a 1500 target">
+        <div className="mountains mountains-back" />
+        <div className="mountains mountains-front" />
+        <LoginTarget />
+        <div className="art-hill hill-back" />
+        <div className="art-hill hill-front" />
+        <div className="art-sign">
           <span>1500 ↑</span>
           <i />
         </div>
-        <div className="backpack">
-          <i />
-          <b />
-        </div>
+        <LoginBackpack />
       </section>
     </main>
   );
@@ -546,34 +538,14 @@ function CoursePage({ kind, plan }: { kind: "rw" | "math"; plan: Plan }) {
   );
 }
 
-function BookArt() {
-  return (
-    <div className="book-art" aria-hidden="true">
-      <span className="book-page left"><i /><i /><i /></span>
-      <span className="book-page right"><i /><i /><i /></span>
-      <b />
-    </div>
-  );
-}
-
-function MathArt() {
-  return (
-    <div className="math-art" aria-hidden="true">
-      <span className="set-square" />
-      <span className="protractor" />
-      <b />
-      <i />
-    </div>
-  );
-}
-
 function SubjectCard({
   type,
   title,
   subtitle,
-  button = "Open",
+  button = "Open >",
   href,
   plan,
+  progress,
 }: {
   type: "rw" | "math";
   title: string;
@@ -581,15 +553,26 @@ function SubjectCard({
   button?: string;
   href: string;
   plan: Plan;
+  progress?: number;
 }) {
   return (
     <section className={`subject-card ${type}`}>
       <h2>{title}</h2>
-      <p>{subtitle}</p>
-      <Link href={planHref(href, plan)}>
-        {button} <ChevronRight size={13} />
-      </Link>
-      {type === "rw" ? <BookArt /> : <MathArt />}
+      <p>
+        {subtitle}
+        {progress !== undefined && <span>{progress}%</span>}
+      </p>
+      {progress !== undefined && (
+        <span className="subject-progress" aria-label={`${progress}% complete`}>
+          <i style={{ width: `${progress * 8}px` }} />
+        </span>
+      )}
+      <Link href={planHref(href, plan)}>{button}</Link>
+      {type === "rw" ? (
+        <ReadingWritingArt className="art subject-illustration book-illustration" />
+      ) : (
+        <MathToolsArt className="art subject-illustration math-illustration" />
+      )}
     </section>
   );
 }
@@ -601,8 +584,8 @@ function Bank({ plan }: { plan: Plan }) {
       <PageTop />
       <header className="icon-title"><BookOpen /> <h1>Question Bank</h1></header>
       <div className="subject-grid">
-        <SubjectCard type="rw" title="Reading & Writing" subtitle={`12 of ${limit === "All" ? "1,492" : "200"} solved   1%`} href="/bank" plan={plan} />
-        <SubjectCard type="math" title="Math" subtitle={`40 of ${limit === "All" ? "2,390" : "200"} solved   2%`} href="/bank/math" plan={plan} />
+        <SubjectCard type="rw" title="Reading & Writing" subtitle={`12 of ${limit === "All" ? "1,492" : "200"} solved`} progress={1} href="/bank/run" plan={plan} />
+        <SubjectCard type="math" title="Math" subtitle={`40 of ${limit === "All" ? "2,390" : "200"} solved`} progress={2} href="/bank/math" plan={plan} />
       </div>
       <div className="section-label">
         <span><BarChart3 /> Question Analytics</span>
@@ -640,8 +623,8 @@ function Rush({ plan }: { plan: Plan }) {
       <header className="icon-title"><Zap /> <h1>Question Rush</h1></header>
       <InfoBanner title="What is Question Rush?" text="A timed drill against the clock. Short sets, instant feedback — built to raise pace without dropping accuracy." />
       <div className="subject-grid rush-cards">
-        <SubjectCard type="rw" title="Reading & Writing" subtitle="1,492 questions" button="Continue" href="/bank/run" plan={plan} />
-        <SubjectCard type="math" title="Math" subtitle="2,390 questions" button="Continue" href="/bank/run" plan={plan} />
+        <SubjectCard type="rw" title="Reading & Writing" subtitle="1,492 questions" button="Continue >" href="/bank/run" plan={plan} />
+        <SubjectCard type="math" title="Math" subtitle="2,390 questions" button="Continue >" href="/bank/run" plan={plan} />
       </div>
       <div className="section-label simple"><span><Clock3 /> Recent session</span></div>
       <div className="recent-session">
@@ -735,6 +718,13 @@ const skills = [
   ["Nonlinear equations in one variable", "4/110", "50%"],
 ];
 
+function accuracyTone(accuracy: string) {
+  if (["100%", "86%", "85%"].includes(accuracy)) return "green";
+  if (["75%", "62%"].includes(accuracy)) return "amber";
+  if (accuracy === "50%") return "red";
+  return "muted";
+}
+
 function BankMath({ plan }: { plan: Plan }) {
   const [filtersOpen, setFiltersOpen] = useState(false);
   return (
@@ -754,7 +744,7 @@ function BankMath({ plan }: { plan: Plan }) {
             className={filtersOpen ? "open" : ""}
             onClick={() => setFiltersOpen((value) => !value)}
           >
-            <Filter /> Filters <ChevronDown />
+            <Filter /> Filters {filtersOpen ? <ChevronUp /> : <ChevronDown />}
           </button>
           {filtersOpen && (
             <div className="filter-menu">
@@ -780,7 +770,7 @@ function BankMath({ plan }: { plan: Plan }) {
                 <span>{name}</span>
                 <span className="progress"><b style={{ width: `${Math.max(4, 36 - index * 3)}px` }} /></span>
                 <small>{progress}</small>
-                <em className={accuracy === "100%" ? "green" : accuracy === "50%" ? "red" : accuracy === "—" ? "muted" : "orange"}>
+                <em className={accuracyTone(accuracy)}>
                   <i />{accuracy}
                 </em>
               </Link>
@@ -814,7 +804,13 @@ function Runner({ plan, explained }: { plan: Plan; explained: boolean }) {
       <header className="runner-top">
         <button><ArrowLeft /> Go back</button>
         <button>Directions <ChevronDown /></button>
-        <div><strong>00:42</strong><small>Ⅱ Pause · Hide</small></div>
+        <div className="runner-timer">
+          <strong>00:42</strong>
+          <span>
+            <button><Pause /> Pause</button>
+            <button><EyeOff /> Hide</button>
+          </span>
+        </div>
         <nav>
           <button><Highlighter />Highlight</button>
           <button><Grid2X2 />Calculator</button>
@@ -829,13 +825,14 @@ function Runner({ plan, explained }: { plan: Plan; explained: boolean }) {
             <button><Bookmark /> Mark for Review</button>
             <button><Target /> Report</button>
           </div>
-          <p className="eyebrow">Math · Algebra — Linear equations</p>
+          <p className="eyebrow">MATH · ALGEBRA — LINEAR EQUATIONS</p>
           <h1>An elevator is located 5 floors below ground level (floor −5) and rises at a constant rate of 4 floors per minute. The equation <i>y</i> = 4<i>x</i> − 5 gives the floor <i>y</i> the elevator is on after <i>x</i> minutes. Which table shows three values of <i>x</i> and their corresponding values of <i>y</i> according to the given equation?</h1>
           <div className="answers">
             <div className={`answer ${explained ? "wrong" : ""}`}>
               <span>A</span>
               {explained && <b className="wrong-x"><X /></b>}
               <AnswerTable values={[[0, -4], [1, 1], [2, 6]]} />
+              <button className="eliminate" aria-label="Eliminate choice A">A</button>
               {explained && <button onClick={showExplained}>Explain</button>}
               {explained && (
                 <div className="scott-note">
@@ -848,14 +845,17 @@ function Runner({ plan, explained }: { plan: Plan; explained: boolean }) {
             <div className="answer">
               <span>B</span>
               <AnswerTable values={[[0, -5], [1, -1], [2, 3]]} />
+              <button className="eliminate" aria-label="Eliminate choice B">B</button>
             </div>
             <div className="answer">
               <span>C</span>
               <AnswerTable values={[[0, -5], [1, -9], [2, -13]]} />
+              <button className="eliminate" aria-label="Eliminate choice C">C</button>
             </div>
             <div className="answer">
               <span>D</span>
               <AnswerTable values={[[0, 5], [1, 9], [2, 13]]} />
+              <button className="eliminate" aria-label="Eliminate choice D">D</button>
             </div>
           </div>
         </section>
@@ -957,7 +957,7 @@ function Pricing({ highlight }: { highlight?: string }) {
         <Link href="/">Open app</Link>
       </header>
       <section className="pricing-content">
-        <div className="faces"><i /><i /><Bullseye /><i /><i /></div>
+        <div className="faces"><PricingHeroArt /></div>
         <h1>Everything you need to<br /><span>hit 1500.</span></h1>
         <p className="social-proof"><b>SR</b><b>AC</b><b>JM</b> Scott’s students. 1580 SAT · Georgia Tech.</p>
         <div className="price-grid">
