@@ -1,0 +1,1201 @@
+/* Locked 1280 × 800 artboard measurements */
+@media (min-width: 801px) {
+  :root {
+    --rail-width: 236px;
+  }
+
+  .rail {
+    padding: 16px 12px 10px;
+  }
+
+  .rail-logo {
+    margin: 0 8px 14px;
+  }
+
+  .logo {
+    gap: 10px;
+  }
+
+  .logo strong,
+  .logo-compact strong {
+    font-size: 15px;
+  }
+
+  .logo small {
+    color: var(--sky);
+    font-size: 12px;
+    margin-top: 3px;
+  }
+
+  .logo-mark,
+  .logo-compact .logo-mark {
+    border-width: 2px;
+    height: 26px;
+    width: 26px;
+  }
+
+  .logo-mark::before {
+    border-width: 2px;
+    height: 16px;
+    width: 16px;
+  }
+
+  .logo-mark span {
+    height: 6.4px;
+    width: 6.4px;
+  }
+
+  .exam-switcher {
+    font-size: 10px;
+    font-weight: 600;
+    height: 24px;
+    margin-bottom: 12px;
+    padding: 2px;
+  }
+
+  .exam-switcher span {
+    padding: 4px 0;
+  }
+
+  .exam-switcher .selected {
+    background: rgba(124, 203, 255, 0.22);
+  }
+
+  .nav-section {
+    margin-bottom: 10px;
+  }
+
+  .nav-section > p {
+    font-size: 10px;
+    margin: 11px 10px 6px;
+  }
+
+  .rail-nav a,
+  .rail-footer a {
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 34px;
+    padding: 7px 10px;
+  }
+
+  .rail-nav a:hover,
+  .rail-nav a.active {
+    background: rgba(124, 203, 255, 0.16);
+  }
+
+  .rail-nav a:not(.active),
+  .rail-footer a {
+    color: rgba(255, 255, 255, 0.62);
+  }
+
+  .rail-footer .book-scott {
+    color: var(--gold);
+  }
+
+  .new-chip {
+    background: rgba(63, 169, 245, 0.22);
+    color: var(--sky);
+    font-size: 9px;
+    padding: 3px 7px;
+  }
+
+  .pro-chip {
+    color: #111111;
+    font-size: 9px;
+  }
+
+  .profile {
+    min-height: 40px;
+    padding: 5px 8px;
+  }
+
+  .profile .avatar {
+    font-size: 10px;
+    height: 26px;
+    width: 26px;
+  }
+
+  .profile span:nth-child(2) {
+    font-size: 13px;
+  }
+
+  .app-main {
+    padding: 0 28px 24px;
+  }
+
+  .app-main.flush {
+    padding: 0;
+  }
+
+  .page-pad {
+    padding: 4px 28px 20px;
+  }
+
+  .page-top {
+    height: 56px;
+    margin-bottom: 0;
+  }
+
+  .search {
+    height: 36px;
+    padding: 0 15px;
+    width: 280px;
+  }
+
+  .search input {
+    font-size: 13px;
+  }
+
+  .top-signals span {
+    font-size: 12px;
+    height: 30px;
+    padding: 0 12px;
+  }
+
+  .icon-title {
+    margin: 14px 0 16px;
+  }
+
+  .icon-title h1 {
+    font-size: 34px;
+  }
+
+  .icon-title > svg {
+    height: 27px;
+    width: 27px;
+  }
+
+  /* Login */
+  .login-page {
+    grid-template-columns: 520px 1fr;
+    justify-content: stretch;
+    min-height: 800px;
+    padding: 28px 28px 28px 0;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 72px;
+  }
+
+  .login-form > .logo {
+    margin-left: 0;
+    width: 360px;
+  }
+
+  .login-box {
+    margin-top: 34px;
+    width: 360px;
+  }
+
+  .login-box h1 {
+    font-size: 35px;
+    margin: 0 0 30px;
+    text-align: center;
+  }
+
+  .oauth-grid {
+    gap: 10px;
+  }
+
+  .oauth-grid button {
+    border-color: #e5e7eb;
+    border-radius: 12px;
+    color: #374151;
+    font-size: 12px;
+    gap: 11px;
+    height: 84px;
+  }
+
+  .or {
+    border-color: #e5e7eb;
+    margin: 30px 0 25px;
+  }
+
+  .or span,
+  .email-label,
+  .signup-copy {
+    color: #374151;
+  }
+
+  .email-label {
+    font-size: 12px;
+  }
+
+  .email-label input {
+    color: #374151;
+    height: 48px;
+    margin-top: 6px;
+    padding: 0 20px;
+  }
+
+  .black-button {
+    height: 48px;
+    margin-top: 14px;
+  }
+
+  .signup-copy {
+    font-size: 12px;
+    margin-top: 24px;
+  }
+
+  .login-art {
+    background: linear-gradient(180deg, #071428, #0b2a5b 42%, #12386e 70%, #1a4a7a);
+    border-radius: 28px;
+    height: 744px;
+    min-height: 744px;
+  }
+
+  .hill.back {
+    background: #2f6b3a;
+  }
+
+  .hill.front {
+    background: #3b8448;
+  }
+
+  .art-target .bullseye.large {
+    border-width: 10px;
+    height: 168px;
+    padding: 11px;
+    width: 168px;
+  }
+
+  .art-target .bullseye.large i {
+    border-width: 9px;
+    height: 112px;
+    width: 112px;
+  }
+
+  .art-target .bullseye.large b {
+    height: 42px;
+    width: 42px;
+  }
+
+  .sign span {
+    align-items: center;
+    background: #c9842a;
+    display: flex;
+    height: 36px;
+    justify-content: center;
+    padding: 0;
+    width: 86px;
+  }
+
+  .sign i {
+    height: 55px;
+    margin-left: 39px;
+    width: 6px;
+  }
+
+  .backpack {
+    height: 49px;
+    width: 43px;
+  }
+
+  .backpack i {
+    border-width: 6px;
+    height: 21px;
+    left: 9px;
+    top: -20px;
+    width: 26px;
+  }
+
+  .backpack b {
+    height: 22px;
+    width: 38px;
+  }
+
+  /* Home */
+  .pro-strip {
+    font-size: 12px;
+    height: 36px;
+  }
+
+  .pro-strip a {
+    margin-left: 15px;
+    padding: 5px 12px;
+  }
+
+  .home-grid {
+    gap: 22px;
+    grid-template-columns: minmax(0, 1fr) 300px;
+  }
+
+  .home-grid > div > h1 {
+    font-size: 32px;
+    margin: 5px 0 20px;
+  }
+
+  .create-plan-card {
+    border-radius: 18px;
+    height: auto;
+    min-height: 280px;
+  }
+
+  .create-plan-card h2 {
+    font-size: 28px;
+  }
+
+  .create-plan-card p {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .create-plan-card .electric-button {
+    height: 44px;
+    padding: 0 23px;
+  }
+
+  .home-stats {
+    margin-top: 16px;
+  }
+
+  .stat-card {
+    border-radius: 16px;
+    height: 70px;
+    padding: 12px 14px;
+  }
+
+  .stat-card small {
+    font-size: 11px;
+  }
+
+  .stat-card > strong {
+    font-size: 25px;
+  }
+
+  .home-side {
+    gap: 12px;
+  }
+
+  .countdown-card,
+  .score-card,
+  .upsell-card {
+    border-radius: 18px;
+    padding: 16px;
+  }
+
+  .countdown-card small,
+  .countdown-card span,
+  .countdown-card button {
+    font-size: 11px;
+  }
+
+  .countdown-card strong {
+    font-size: 25px;
+  }
+
+  .score-card strong {
+    font-size: 20px;
+  }
+
+  .score-card small {
+    font-size: 10px;
+  }
+
+  .upsell-card {
+    background: #fff8e8;
+    border-color: #f3d48a;
+  }
+
+  .upsell-card h3 {
+    font-size: 15px;
+  }
+
+  .upsell-card li,
+  .upsell-card a {
+    font-size: 11px;
+  }
+
+  /* Ask Scott */
+  .chat-layout {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .chat-history {
+    padding: 16px 15px;
+  }
+
+  .chat-history > button {
+    font-size: 13px;
+    min-height: 38px;
+    padding: 0 9px;
+  }
+
+  .chat-history .electric-button {
+    height: 41px;
+    margin-bottom: 12px;
+  }
+
+  .chat-center {
+    width: 525px;
+  }
+
+  .chat-center h1 {
+    font-size: 26px;
+    margin: 22px 0;
+  }
+
+  .prompt-list {
+    gap: 9px;
+  }
+
+  .prompt-list button {
+    border-radius: 14px;
+    min-height: 48px;
+    padding: 0 16px;
+  }
+
+  .chat-composer {
+    width: 720px;
+  }
+
+  .chat-composer input {
+    height: 52px;
+    padding: 0 62px 0 20px;
+  }
+
+  .chat-composer button {
+    height: 36px;
+    right: 8px;
+    top: 8px;
+    width: 36px;
+  }
+
+  .chat-composer small {
+    font-size: 11px;
+    margin-top: 9px;
+  }
+
+  /* Planner */
+  .planner-banner {
+    height: 48px;
+    margin: 0 -28px;
+    padding: 0 28px;
+  }
+
+  .planner-banner span,
+  .planner-banner button {
+    font-size: 12px;
+  }
+
+  .planner-page {
+    padding-top: 24px;
+  }
+
+  .planner-title h1 {
+    font-size: 32px;
+  }
+
+  .planner-title span {
+    font-size: 12px;
+    margin-right: 41px;
+  }
+
+  .planner-title strong {
+    font-size: 21px;
+  }
+
+  .planner-list {
+    min-height: 605px;
+  }
+
+  .planner-row {
+    gap: 15px;
+    grid-template-columns: 72px 21px 1fr auto;
+    min-height: 92px;
+    padding: 0 21px;
+  }
+
+  .planner-row .day {
+    font-size: 12px;
+  }
+
+  .planner-row strong {
+    font-size: 16px;
+  }
+
+  .planner-row small {
+    font-size: 11px;
+  }
+
+  .planner-row .electric-button {
+    height: 34px;
+    padding: 0 17px;
+  }
+
+  /* Masterclass */
+  .course-hero {
+    height: 228px;
+    padding: 20px 32px;
+  }
+
+  .course-hero.rw {
+    background: linear-gradient(118deg, #0b2a5b, #16407a 42%, #3fa9f5);
+  }
+
+  .course-hero.math {
+    background: linear-gradient(118deg, #0b2a5b, #2b7ec4 52%, #7ccbff);
+  }
+
+  .course-hero > a {
+    font-size: 11px;
+  }
+
+  .course-hero h1 {
+    font-size: 32px;
+    margin-top: 36px;
+  }
+
+  .course-tabs {
+    gap: 31px;
+    left: 32px;
+  }
+
+  .course-tabs button {
+    font-size: 12px;
+    height: 39px;
+  }
+
+  .course-body {
+    gap: 50px;
+    grid-template-columns: 1fr 292px;
+    padding: 20px 32px;
+  }
+
+  .course-copy h2 {
+    font-size: 26px;
+  }
+
+  .course-copy p {
+    font-size: 13px;
+    max-width: 675px;
+  }
+
+  .instructor-card {
+    margin-top: -54px;
+    min-height: 276px;
+    padding: 19px 21px;
+  }
+
+  .instructor-card h3,
+  .instructor-card > strong {
+    font-size: 15px;
+  }
+
+  .instructor-card > a,
+  .instructor-card p {
+    font-size: 11px;
+  }
+
+  .instructor-avatar {
+    height: 85px;
+    width: 85px;
+  }
+
+  .instructor-avatar span {
+    font-size: 21px;
+    height: 60px;
+    width: 60px;
+  }
+
+  .course-cta {
+    bottom: 18px;
+    height: 56px;
+    max-width: 719px;
+    padding: 6px 9px 6px 24px;
+  }
+
+  .course-cta span {
+    font-size: 12px;
+  }
+
+  .course-cta button {
+    font-size: 11px;
+    height: 39px;
+  }
+
+  .course-cta a {
+    font-size: 11px;
+    padding: 11px 19px;
+  }
+
+  /* Practice hubs */
+  .subject-grid {
+    gap: 15px;
+  }
+
+  .subject-card,
+  .rush-cards .subject-card,
+  .challenge-cards .subject-card {
+    border-radius: 20px;
+    height: 204px;
+    padding: 22px;
+  }
+
+  .subject-card.rw {
+    background: linear-gradient(125deg, #ff4d8d, #e040a8 42%, #9b4dff 78%, #7c3aed);
+  }
+
+  .subject-card.math {
+    background: linear-gradient(125deg, #3fa9f5, #2ec5f3 48%, #22d3ee);
+  }
+
+  .subject-card h2 {
+    font-size: 26px;
+  }
+
+  .subject-card p {
+    font-size: 12px;
+  }
+
+  .subject-card > a {
+    bottom: 19px;
+    font-size: 12px;
+    padding: 9px 16px;
+  }
+
+  .book-art {
+    height: 158px;
+    width: 200px;
+  }
+
+  .book-page {
+    height: 115px;
+    width: 81px;
+  }
+
+  .book-page.left {
+    left: 31px;
+  }
+
+  .book-page.right {
+    left: 110px;
+  }
+
+  .book-art b {
+    height: 20px;
+    width: 88px;
+  }
+
+  .math-art {
+    height: 162px;
+    width: 219px;
+  }
+
+  .section-label {
+    margin: 16px 1px 9px;
+  }
+
+  .section-label span {
+    font-size: 13px;
+  }
+
+  .section-label button {
+    font-size: 11px;
+  }
+
+  .analytics .stat-card {
+    height: 132px;
+    padding: 16px;
+  }
+
+  .analytics .stat-card > strong {
+    font-size: 32px;
+  }
+
+  .activity-fade {
+    bottom: 15px;
+    font-size: 11px;
+  }
+
+  .info-banner {
+    border-radius: 17px;
+    min-height: 74px;
+    padding: 12px 16px;
+  }
+
+  .info-banner strong {
+    font-size: 15px;
+  }
+
+  .info-banner p,
+  .info-banner p strong {
+    font-size: 12px;
+  }
+
+  .info-banner > span {
+    height: 43px;
+    width: 43px;
+  }
+
+  .rush-cards,
+  .challenge-cards {
+    margin-top: 15px;
+  }
+
+  .info-banner:has(+ .rush-cards) {
+    border-color: #b8e2ff;
+  }
+
+  .recent-session {
+    border-radius: 17px;
+    gap: 19px;
+    min-height: 65px;
+    padding: 10px 18px;
+  }
+
+  .recent-session > div strong {
+    font-size: 13px;
+  }
+
+  .recent-session > div small,
+  .recent-session > span,
+  .recent-session > button {
+    font-size: 11px;
+  }
+
+  .challenge-cards .rw {
+    background: linear-gradient(125deg, #0b2a5b, #1a4f9c, #3fa9f5);
+  }
+
+  .challenge-cards .math {
+    background: linear-gradient(125deg, #3fa9f5, #5bbcf8, #7ccbff);
+  }
+
+  /* Tests */
+  .test-grid {
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .test-card {
+    border-radius: 18px;
+    min-height: 310px;
+  }
+
+  .test-preview {
+    height: 119px;
+  }
+
+  .test-preview > span {
+    height: 103px;
+    padding-top: 29px;
+    width: 210px;
+  }
+
+  .test-preview > span::before {
+    content: attr(data-section) " · " attr(data-time);
+    font-size: 8px;
+    height: 23px;
+    padding: 7px 8px;
+    text-align: right;
+  }
+
+  .test-preview i {
+    height: 4px;
+    margin: 12px 10px;
+    width: 136px;
+  }
+
+  .test-card-body {
+    padding: 12px 14px;
+  }
+
+  .test-card-body h2 {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .test-card-body > button:not(.more),
+  .test-card-body > a {
+    font-size: 11px;
+    min-height: 32px;
+    padding: 0 16px;
+  }
+
+  .test-badges span,
+  .test-badges em {
+    font-size: 10px;
+  }
+
+  /* Math bank */
+  .bank-heading h1 {
+    font-size: 40px;
+  }
+
+  .bank-heading a {
+    font-size: 11px;
+  }
+
+  .filter-row {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .filter-row > button {
+    font-size: 12px;
+    height: 34px;
+    padding: 0 14px;
+  }
+
+  .filter-menu {
+    gap: 8px;
+    left: 275px;
+    padding: 12px;
+    top: 41px;
+    width: 348px;
+  }
+
+  .filter-menu button {
+    font-size: 11px;
+    height: 34px;
+    padding: 0 14px;
+  }
+
+  .bank-math.filters-open .bank-heading,
+  .bank-math.filters-open .practice-all,
+  .bank-math.filters-open .skills-head,
+  .bank-math.filters-open .skills-list,
+  .bank-math.filters-open .filter-row > button:not(.open) {
+    opacity: 0.46;
+  }
+
+  .practice-all {
+    border-radius: 18px;
+    min-height: 74px;
+    padding: 12px 19px;
+  }
+
+  .practice-all strong {
+    font-size: 15px;
+  }
+
+  .practice-all p {
+    font-size: 11px;
+  }
+
+  .practice-all a {
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+
+  .skills-head {
+    font-size: 10px;
+    grid-template-columns: 1fr 175px 110px;
+    padding-top: 18px;
+  }
+
+  .skills-list h3 {
+    font-size: 15px;
+  }
+
+  .skill-row {
+    gap: 10px;
+    grid-template-columns: 18px 1fr 112px 59px 92px;
+    min-height: 42px;
+  }
+
+  .skill-row > span:nth-child(2) {
+    font-size: 13px;
+  }
+
+  .skill-row small,
+  .skill-row em {
+    font-size: 10px;
+  }
+
+  .skill-row em.green i {
+    background: #16a34a;
+  }
+
+  .skill-row em.orange i {
+    background: #d97706;
+  }
+
+  .skill-row em.red i {
+    background: #dc2626;
+  }
+
+  /* Practice runner */
+  .runner {
+    padding: 53px 0 64px;
+  }
+
+  .runner-top {
+    height: 53px;
+    padding: 0 25px;
+  }
+
+  .runner-top > button {
+    font-size: 12px;
+  }
+
+  .runner-top > div strong {
+    font-size: 13px;
+  }
+
+  .runner-top > div small,
+  .runner-top nav button {
+    font-size: 9px;
+  }
+
+  .runner-top nav {
+    gap: 30px;
+  }
+
+  .question-area {
+    grid-template-columns: 885px 380px;
+    min-height: calc(100vh - 117px);
+  }
+
+  .runner:not(.explained) .question-area {
+    grid-template-columns: 885px;
+  }
+
+  .question-content {
+    padding: 16px 0 56px 80px;
+  }
+
+  .question-meta {
+    grid-template-columns: 38px 1fr auto;
+    margin-bottom: 15px;
+  }
+
+  .question-meta > b {
+    font-size: 20px;
+    height: 36px;
+    width: 35px;
+  }
+
+  .question-meta button {
+    font-size: 12px;
+  }
+
+  .question-content > .eyebrow {
+    font-size: 10px;
+  }
+
+  .question-content > h1 {
+    font-family: var(--font-source-serif), Georgia, serif;
+    font-size: 17.5px;
+    line-height: 1.4;
+    margin: 9px 0 22px;
+    max-width: 690px;
+  }
+
+  .answers {
+    gap: 14px;
+    padding-bottom: 50px;
+  }
+
+  .answer {
+    border-radius: 15px;
+    height: 198px;
+    max-width: none;
+    width: 548px;
+  }
+
+  .answer table,
+  .correct-answer table {
+    font-size: 15px;
+    width: 145px;
+  }
+
+  .answer td,
+  .answer th,
+  .correct-answer td,
+  .correct-answer th {
+    height: 32px;
+  }
+
+  .answer.wrong {
+    border: 2px solid #dc2626;
+    box-shadow: none;
+  }
+
+  .wrong-x {
+    background: #dc2626;
+  }
+
+  .scott-note {
+    border-radius: 14px;
+    bottom: -22px;
+    padding: 12px;
+    width: 300px;
+  }
+
+  .scott-note strong,
+  .scott-note p,
+  .scott-note button {
+    font-size: 11px;
+  }
+
+  .explanation-panel {
+    border-radius: 18px 18px 0 0;
+    height: 656px;
+    margin-top: 12px;
+    max-height: 656px;
+    width: 380px;
+  }
+
+  .explanation-panel > header {
+    height: 46px;
+    padding: 0 15px;
+  }
+
+  .explanation-panel > nav {
+    height: 36px;
+    padding: 0 12px;
+  }
+
+  .explanation-panel > nav button,
+  .explanation-panel > header label {
+    font-size: 11px;
+  }
+
+  .correct-answer {
+    margin: 16px 14px;
+    padding: 12px;
+  }
+
+  .correct-answer > strong {
+    font-size: 11px;
+  }
+
+  .explanation-panel > h3 {
+    font-size: 15px;
+    margin: 0 14px 2px;
+  }
+
+  .explanation-panel > p {
+    font-size: 11px;
+    margin: 0 14px 12px;
+  }
+
+  .method {
+    margin: 10px 14px;
+    padding: 12px;
+  }
+
+  .method small {
+    font-size: 10px;
+  }
+
+  .method strong {
+    font-size: 13px;
+  }
+
+  .method p {
+    font-size: 11px;
+  }
+
+  .runner-bottom {
+    height: 64px;
+    padding: 0 19px;
+  }
+
+  .runner-bottom button {
+    font-size: 11px;
+    height: 36px;
+    padding: 0 15px;
+  }
+
+  /* Pricing */
+  .pricing-page {
+    background: #050b18;
+    padding-top: 31px;
+  }
+
+  .sale-banner {
+    font-size: 12px;
+    height: 31px;
+  }
+
+  .pricing-page > header {
+    height: 66px;
+    padding: 0 36px;
+  }
+
+  .pricing-page > header .logo-compact strong {
+    font-size: 15px;
+  }
+
+  .pricing-page > header nav,
+  .pricing-page > header > a {
+    font-size: 12px;
+  }
+
+  .pricing-content {
+    max-width: 900px;
+    padding-bottom: 38px;
+  }
+
+  .faces {
+    height: 60px;
+  }
+
+  .pricing-content > h1 {
+    font-size: 39px;
+    margin: 16px 0 15px;
+  }
+
+  .social-proof {
+    font-size: 11px;
+    margin-bottom: 34px;
+  }
+
+  .price-grid {
+    gap: 20px;
+  }
+
+  .price-card {
+    background: #0b1c36;
+    border-radius: 20px;
+    height: 400px;
+    min-height: 400px;
+    padding: 19px 20px 56px;
+  }
+
+  .price-card.pro {
+    background: #102246;
+    border: 2px solid var(--gold);
+  }
+
+  .price-card h2 {
+    font-size: 22px;
+  }
+
+  .discount,
+  .best-value {
+    font-size: 10px;
+  }
+
+  .price strong {
+    font-size: 38px;
+  }
+
+  .price s,
+  .price span,
+  .price-card > p,
+  .price-card li,
+  .price-card > button {
+    font-size: 11px;
+  }
+
+  .price-card li {
+    margin: 9px 0;
+  }
+
+  .price-card > button {
+    bottom: 15px;
+    height: 42px;
+    left: 20px;
+    right: 20px;
+    width: calc(100% - 40px);
+  }
+}

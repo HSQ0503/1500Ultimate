@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Gabarito, Source_Serif_4 } from "next/font/google";
 import "./theme.css";
+import "./artboard-1280.css";
 
 const dmSans = DM_Sans({
   variable: "--font-ui",
