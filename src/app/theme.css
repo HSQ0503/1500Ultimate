@@ -2654,6 +2654,12 @@ h2 {
   justify-self: end;
 }
 
+.runner:not(.explained) .runner-bottom > nav button:last-child {
+  background: var(--electric);
+  border-color: var(--electric);
+  color: white;
+}
+
 /* pricing */
 .pricing-page {
   background: #050b18;
@@ -2731,17 +2737,87 @@ h2 {
   text-align: center;
 }
 
-.faces {
-  align-items: center;
+.crew {
+  align-items: flex-end;
   display: flex;
-  height: 60px;
+  gap: 8px;
+  height: 72px;
   justify-content: center;
 }
 
-.faces svg {
+.crew > svg {
   display: block;
-  height: 74px;
-  width: 300px;
+  flex: none;
+}
+
+.blob {
+  border-radius: 46% 54% 48% 52%;
+  box-shadow:
+    inset -6px -8px 0 rgba(0, 0, 0, 0.12),
+    inset 5px 6px 0 rgba(255, 255, 255, 0.18);
+  display: block;
+  flex: none;
+  position: relative;
+}
+
+.blob i {
+  background: #061b37;
+  border-radius: 50%;
+  height: 4px;
+  position: absolute;
+  top: 34%;
+  width: 4px;
+}
+
+.blob i:first-child {
+  left: 30%;
+}
+
+.blob i:nth-child(2) {
+  right: 30%;
+}
+
+.blob b {
+  border-bottom: 2px solid #061b37;
+  border-radius: 50%;
+  height: 8px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+}
+
+.blob.b1 {
+  background: #0b2a5b;
+  height: 56px;
+  width: 44px;
+}
+
+.blob.b2 {
+  background: #3fa9f5;
+  height: 64px;
+  width: 52px;
+}
+
+.blob.b3 {
+  background: #ffbd20;
+  height: 50px;
+  width: 40px;
+}
+
+.blob.b3 i {
+  background: #3d2b00;
+}
+
+.blob.b3 b {
+  border-bottom-color: #3d2b00;
+}
+
+.blob.b4 {
+  background: #7ccbff;
+  height: 58px;
+  width: 48px;
 }
 
 .pricing-content > h1 {
@@ -2762,7 +2838,7 @@ h2 {
 
 .social-proof b {
   align-items: center;
-  background: #264c80;
+  background: #0b2a5b;
   border-radius: 50%;
   color: white;
   display: inline-flex;
@@ -2774,7 +2850,7 @@ h2 {
 }
 
 .social-proof b:nth-child(2) { background: var(--electric); }
-.social-proof b:nth-child(3) { background: #c98628; margin-right: 10px; }
+.social-proof b:nth-child(3) { background: #c9842a; margin-right: 10px; }
 
 .price-grid {
   display: grid;
@@ -2871,16 +2947,24 @@ h2 {
   margin: 9px 0;
 }
 
-.price-card li svg {
+.price-card li .ico {
+  align-items: center;
   background: #0e3d68;
   border-radius: 50%;
   color: var(--electric);
+  display: inline-flex;
+  flex: 0 0 17px;
   height: 17px;
-  padding: 4px;
+  justify-content: center;
   width: 17px;
 }
 
-.price-card.pro li svg {
+.price-card li .ico svg {
+  height: 9px;
+  width: 9px;
+}
+
+.price-card.pro li .ico {
   background: #524c27;
   color: var(--gold);
 }

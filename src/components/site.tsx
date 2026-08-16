@@ -20,6 +20,7 @@ import {
   CircleHelp,
   Clock3,
   EyeOff,
+  FileText,
   Filter,
   Flame,
   Grid2X2,
@@ -37,12 +38,14 @@ import {
   Send,
   Settings,
   Sparkles,
+  Star,
   Target,
   Timer,
   TrendingUp,
   UserRound,
   X,
   Zap,
+  type LucideIcon,
 } from "lucide-react";
 import {
   canAccess,
@@ -58,7 +61,6 @@ import {
   LoginTarget,
   MathToolsArt,
   MicrosoftMark,
-  PricingHeroArt,
   ReadingWritingArt,
 } from "@/components/illustrations";
 
@@ -899,22 +901,27 @@ function Runner({ plan, explained }: { plan: Plan; explained: boolean }) {
   );
 }
 
-const blueprintFeatures = [
-  "Full Digital SAT question bank",
-  "2 full-length Blueprint tests",
-  "Study planner from your test date",
-  "Question Rush practice sets",
-  "Core analytics",
+type PricingFeature = {
+  label: string;
+  icon: LucideIcon;
+};
+
+const blueprintFeatures: PricingFeature[] = [
+  { label: "Full Digital SAT question bank", icon: Grid2X2 },
+  { label: "2 full-length Blueprint tests", icon: FileText },
+  { label: "Study planner from your test date", icon: CalendarDays },
+  { label: "Question Rush practice sets", icon: Zap },
+  { label: "Core analytics", icon: BarChart3 },
 ];
 
-const proFeatures = [
-  "Everything in Blueprint",
-  "Masterclass for R&W and Math",
-  "All 6 full-length Blueprint tests",
-  "Ask Scott unlimited",
-  "Challenge Questions unlocked",
-  "Unlimited Question Rush",
-  "Priority plans from Scott",
+const proFeatures: PricingFeature[] = [
+  { label: "Everything in Blueprint", icon: Check },
+  { label: "Masterclass for R&W and Math", icon: Play },
+  { label: "All 6 full-length Blueprint tests", icon: Target },
+  { label: "Ask Scott unlimited", icon: MessageCircle },
+  { label: "Challenge Questions unlocked", icon: Star },
+  { label: "Unlimited Question Rush", icon: Zap },
+  { label: "Priority plans from Scott", icon: UserRound },
 ];
 
 function PriceCard({
@@ -928,7 +935,7 @@ function PriceCard({
   name: string;
   oldPrice: string;
   price: string;
-  features: string[];
+  features: PricingFeature[];
   pro?: boolean;
   highlighted?: boolean;
 }) {
@@ -940,7 +947,12 @@ function PriceCard({
       <div className="price"><s>${oldPrice}</s><strong>${price}</strong><span>one-time</span></div>
       <p>{pro ? "Masterclass, all six tests, and unlimited Ask Scott. Access through the SAT." : "Pay once. Keep it through your SAT. No subscription."}</p>
       <ul>
-        {features.map((feature) => <li key={feature}><Check /> {feature}</li>)}
+        {features.map(({ label, icon: Icon }) => (
+          <li key={label}>
+            <span className="ico"><Icon aria-hidden="true" /></span>
+            {label}
+          </li>
+        ))}
       </ul>
       <button>{pro ? "Get Pro — 40% off" : "Get Blueprint — 40% off"}</button>
     </section>
@@ -957,7 +969,17 @@ function Pricing({ highlight }: { highlight?: string }) {
         <Link href="/">Open app</Link>
       </header>
       <section className="pricing-content">
-        <div className="faces"><PricingHeroArt /></div>
+        <div className="crew" aria-hidden="true">
+          <span className="blob b1"><i /><i /><b /></span>
+          <span className="blob b2"><i /><i /><b /></span>
+          <svg width="36" height="36" viewBox="0 0 32 32" style={{ margin: "0 2px 10px" }}>
+            <circle cx="16" cy="16" r="13" fill="none" stroke="#3FA9F5" strokeWidth="2.2" />
+            <circle cx="16" cy="16" r="8" fill="none" stroke="#7CCBFF" strokeWidth="2.2" />
+            <circle cx="16" cy="16" r="3.2" fill="#3FA9F5" />
+          </svg>
+          <span className="blob b3"><i /><i /><b /></span>
+          <span className="blob b4"><i /><i /><b /></span>
+        </div>
         <h1>Everything you need to<br /><span>hit 1500.</span></h1>
         <p className="social-proof"><b>SR</b><b>AC</b><b>JM</b> Scott’s students. 1580 SAT · Georgia Tech.</p>
         <div className="price-grid">
