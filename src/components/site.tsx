@@ -23,7 +23,6 @@ import {
   Grid2X2,
   Highlighter,
   Home,
-  Lightbulb,
   LockKeyhole,
   Menu,
   MessageCircle,
