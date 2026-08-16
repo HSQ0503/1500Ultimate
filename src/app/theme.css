@@ -656,8 +656,8 @@ h2 {
 }
 
 .art-sign {
-  bottom: 108px;
-  left: 12%;
+  bottom: 169px;
+  left: 10%;
   position: absolute;
   z-index: 5;
 }
@@ -677,16 +677,16 @@ h2 {
 .art-sign i {
   background: #8b5a2b;
   display: block;
-  height: 74px;
+  height: 55px;
   margin-left: 40px;
   width: 6px;
 }
 
 .art-wrap .pack {
-  bottom: 82px;
+  bottom: 148px;
   height: 86px;
   position: absolute;
-  right: 10%;
+  right: 19%;
   width: 78px;
   z-index: 5;
 }

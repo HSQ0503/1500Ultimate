@@ -133,9 +133,8 @@ export function MathToolsArt(props: IllustrationProps) {
       </defs>
       <ellipse cx="119" cy="158" rx="77" ry="9" fill="#075985" opacity=".23" />
       <g>
-        <path d="M51 149 108 42l69 107Zm45-27h38l-26-41Z" fill="#047857" fillRule="evenodd" />
-        <path d="M62 143 108 57l56 86H62Z" fill="url(#math-triangle)" opacity=".92" />
-        <path d="m96 122 12-23 15 23Z" fill="#22C8E5" />
+        <path d="M51 149 108 42l69 107Z" fill="#047857" />
+        <path d="m96 122 12-23 15 23Z" fill="url(#math-triangle)" />
         <path d="M70 142h84" stroke="#6EE7B7" strokeWidth="5" strokeLinecap="round" />
       </g>
       <g>
