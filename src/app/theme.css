@@ -640,7 +640,7 @@ h2 {
 
 .hill-back {
   background: #2f6b3a;
-  bottom: -110px;
+  bottom: -100px;
   height: 310px;
   left: -15%;
   width: 130%;
@@ -648,7 +648,7 @@ h2 {
 
 .hill-front {
   background: #3b8448;
-  bottom: -210px;
+  bottom: -189px;
   height: 315px;
   left: -54%;
   width: 145%;
@@ -686,7 +686,7 @@ h2 {
   bottom: 148px;
   height: 86px;
   position: absolute;
-  right: 19%;
+  right: 17%;
   width: 78px;
   z-index: 5;
 }
