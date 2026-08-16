@@ -54,7 +54,8 @@ import {
 import {
   AppleMark,
   GoogleMark,
-  LoginLandscape,
+  LoginBackpack,
+  LoginTarget,
   MathToolsArt,
   MicrosoftMark,
   PricingHeroArt,
@@ -159,7 +160,7 @@ function Rail({ path, plan }: { path: string; plan: Plan }) {
                   href={planHref(item.href, plan)}
                   key={item.href}
                 >
-                  <Icon size={16} strokeWidth={1.75} />
+                  <Icon size={16} strokeWidth={1.4} />
                   <span>{item.label}</span>
                   {"chip" in item && item.chip && (
                     <em className="new-chip">{item.chip}</em>
@@ -172,18 +173,18 @@ function Rail({ path, plan }: { path: string; plan: Plan }) {
       </nav>
       <div className="rail-footer">
         <Link href={planHref("/pricing", plan)}>
-          <TrendingUp size={16} strokeWidth={1.75} />
+          <TrendingUp size={16} strokeWidth={1.4} />
           <span>Upgrade</span>
           <em className="pro-chip">PRO</em>
         </Link>
         <Link href="#book-scott" className="book-scott">
-          <UserRound size={16} strokeWidth={1.75} />
+          <UserRound size={16} strokeWidth={1.4} />
           <span>Book Scott</span>
         </Link>
         <div className="profile">
           <span className="avatar">AC</span>
           <span>Alex Chen</span>
-          <Settings size={16} strokeWidth={1.75} />
+          <Settings className="profile-gear" size={16} strokeWidth={1.3} />
         </div>
       </div>
     </aside>
@@ -288,7 +289,7 @@ function Login() {
               Apple
             </button>
             <button>
-              <MicrosoftMark className="oauth-mark" />
+              <MicrosoftMark className="oauth-mark microsoft-mark" />
               Microsoft
             </button>
           </div>
@@ -305,8 +306,17 @@ function Login() {
           </p>
         </div>
       </section>
-      <section className="login-art" aria-label="A path toward a 1500 target">
-        <LoginLandscape />
+      <section className="art-wrap" aria-label="A path toward a 1500 target">
+        <div className="mountains mountains-back" />
+        <div className="mountains mountains-front" />
+        <LoginTarget />
+        <div className="art-hill hill-back" />
+        <div className="art-hill hill-front" />
+        <div className="art-sign">
+          <span>1500 ↑</span>
+          <i />
+        </div>
+        <LoginBackpack />
       </section>
     </main>
   );
@@ -554,14 +564,14 @@ function SubjectCard({
       </p>
       {progress !== undefined && (
         <span className="subject-progress" aria-label={`${progress}% complete`}>
-          <i style={{ width: `${progress}%` }} />
+          <i style={{ width: `${progress * 8}px` }} />
         </span>
       )}
       <Link href={planHref(href, plan)}>{button}</Link>
       {type === "rw" ? (
-        <ReadingWritingArt className="subject-illustration book-illustration" />
+        <ReadingWritingArt className="art subject-illustration book-illustration" />
       ) : (
-        <MathToolsArt className="subject-illustration math-illustration" />
+        <MathToolsArt className="art subject-illustration math-illustration" />
       )}
     </section>
   );

@@ -272,6 +272,11 @@ h2 {
   font-size: 13px;
 }
 
+.profile .profile-gear {
+  color: #ffffff;
+  opacity: 0.55;
+}
+
 .app-main {
   min-width: 0;
   padding: 0 28px 24px;
@@ -502,14 +507,18 @@ h2 {
 
 .oauth-mark {
   display: block;
-  height: 21px;
-  width: 21px;
+  height: 22px;
+  width: 22px;
 }
 
 .apple-mark {
-  color: #000;
-  height: 23px;
-  width: 23px;
+  height: 22px;
+  width: 18px;
+}
+
+.microsoft-mark {
+  height: 20px;
+  width: 20px;
 }
 
 .or {
@@ -576,8 +585,15 @@ h2 {
   padding: 0;
 }
 
-.login-art {
-  background: #07172f;
+.art-wrap {
+  background-color: #0a1b3a;
+  background-image:
+    radial-gradient(circle at 18% 13%, rgba(124, 203, 255, 0.22) 0 2px, transparent 2.4px),
+    radial-gradient(circle at 42% 8%, rgba(124, 203, 255, 0.78) 0 1.5px, transparent 1.9px),
+    radial-gradient(circle at 68% 18%, rgba(124, 203, 255, 0.58) 0 1.5px, transparent 1.9px),
+    radial-gradient(circle at 82% 8%, rgba(124, 203, 255, 0.55) 0 2px, transparent 2.4px),
+    radial-gradient(circle at 90% 24%, rgba(124, 203, 255, 0.72) 0 1.5px, transparent 1.9px),
+    linear-gradient(180deg, #071428, #0b2a5b 42%, #12386e 70%, #1a4a7a);
   border-radius: 28px;
   height: 744px;
   min-height: 744px;
@@ -585,10 +601,94 @@ h2 {
   position: relative;
 }
 
-.login-art svg {
-  display: block;
-  height: 100%;
+.mountains {
+  bottom: 112px;
+  clip-path: polygon(0 62%, 18% 30%, 34% 53%, 49% 24%, 68% 61%, 83% 37%, 100% 65%, 100% 100%, 0 100%);
+  height: 280px;
+  left: 0;
+  position: absolute;
   width: 100%;
+  z-index: 1;
+}
+
+.mountains-back {
+  background: #1b2f62;
+}
+
+.mountains-front {
+  background: #243a78;
+  bottom: 90px;
+  clip-path: polygon(0 70%, 19% 50%, 36% 67%, 52% 43%, 71% 73%, 87% 57%, 100% 72%, 100% 100%, 0 100%);
+}
+
+.art-wrap .eye {
+  display: block;
+  height: 168px;
+  left: 50%;
+  position: absolute;
+  top: 366px;
+  transform: translateX(-50%);
+  width: 168px;
+  z-index: 3;
+}
+
+.art-hill {
+  border-radius: 50% 50% 0 0;
+  position: absolute;
+  z-index: 2;
+}
+
+.hill-back {
+  background: #2f6b3a;
+  bottom: -110px;
+  height: 310px;
+  left: -15%;
+  width: 130%;
+}
+
+.hill-front {
+  background: #3b8448;
+  bottom: -210px;
+  height: 315px;
+  left: -54%;
+  width: 145%;
+  z-index: 3;
+}
+
+.art-sign {
+  bottom: 108px;
+  left: 12%;
+  position: absolute;
+  z-index: 5;
+}
+
+.art-sign span {
+  align-items: center;
+  background: #c9842a;
+  border-radius: 4px;
+  color: white;
+  display: flex;
+  font-weight: 700;
+  height: 36px;
+  justify-content: center;
+  width: 86px;
+}
+
+.art-sign i {
+  background: #8b5a2b;
+  display: block;
+  height: 74px;
+  margin-left: 40px;
+  width: 6px;
+}
+
+.art-wrap .pack {
+  bottom: 82px;
+  height: 86px;
+  position: absolute;
+  right: 10%;
+  width: 78px;
+  z-index: 5;
 }
 
 /* home */
@@ -1385,14 +1485,26 @@ h2 {
   background: linear-gradient(125deg, #3fa9f5, #2ec5f3 48%, #22d3ee);
 }
 
-.subject-card::after {
-  background:
-    radial-gradient(circle at 84% 8%, rgba(255, 255, 255, 0.3), transparent 32%),
-    linear-gradient(118deg, rgba(255, 255, 255, 0.13), transparent 45%);
+.subject-card::before {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 48%);
   content: "";
   inset: 0;
   pointer-events: none;
   position: absolute;
+  z-index: 1;
+}
+
+.subject-card::after {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  content: "";
+  height: 112px;
+  pointer-events: none;
+  position: absolute;
+  right: -42px;
+  top: -61px;
+  transform: rotate(-11deg);
+  width: 260px;
   z-index: 1;
 }
 
@@ -1419,14 +1531,14 @@ h2 {
 }
 
 .subject-progress {
-  background: rgba(255, 255, 255, 0.36);
+  background: rgba(255, 255, 255, 0.28);
   border-radius: 999px;
   display: block;
   height: 4px;
   margin-top: 10px;
   overflow: hidden;
   position: relative;
-  width: 195px;
+  width: 196px;
   z-index: 3;
 }
 
@@ -1435,7 +1547,6 @@ h2 {
   border-radius: inherit;
   display: block;
   height: 100%;
-  min-width: 5px;
 }
 
 .subject-card > a {
@@ -1457,18 +1568,19 @@ h2 {
   display: block;
   position: absolute;
   right: 0;
-  width: 230px;
   z-index: 2;
 }
 
 .book-illustration {
-  height: 170px;
+  height: 176px;
   right: 4px;
+  width: 196px;
 }
 
 .math-illustration {
-  height: 170px;
+  height: 176px;
   right: -2px;
+  width: 200px;
 }
 
 .section-label {
@@ -1577,7 +1689,10 @@ h2 {
   margin-top: 15px;
 }
 
-.rush-cards .subject-card,
+.rush-cards .subject-card {
+  height: 200px;
+}
+
 .challenge-cards .subject-card {
   height: 204px;
 }
@@ -2892,7 +3007,7 @@ h2 {
     padding: 45px 20px;
   }
 
-  .login-art {
+  .art-wrap {
     display: none;
   }
 
