@@ -294,7 +294,7 @@ function Login() {
             Continue with email
           </Link>
           <p className="signup-copy">
-            Don&apos;t have an account? <button>Sign up</button>
+            Don’t have an account? <button>Sign up</button>
           </p>
         </div>
       </section>
@@ -401,7 +401,6 @@ function HomePage({ plan }: { plan: Plan }) {
 }
 
 function AskScott({ plan }: { plan: Plan }) {
-  const limits = planLimits(plan);
   return (
     <AppShell path="/ask-scott" plan={plan} flush>
       <div className="chat-layout">
@@ -412,12 +411,11 @@ function AskScott({ plan }: { plan: Plan }) {
           {[
             "SAT is Saturday",
             "Desmos for circles",
-            "Comma splice in R&W",
+            "Comma splice in RW",
             "How to pace Module 2",
           ].map((chat) => (
             <button key={chat}>{chat}</button>
           ))}
-          <small>{limits.askScott} on your plan</small>
         </aside>
         <section className="chat-empty">
           <div className="chat-center">
@@ -432,7 +430,7 @@ function AskScott({ plan }: { plan: Plan }) {
             </div>
           </div>
           <div className="chat-composer">
-            <input aria-label="Ask Scott" placeholder="Ask Scott anything..." />
+            <input aria-label="Ask Scott" placeholder="Ask Scott anything…" />
             <button aria-label="Send"><Send size={15} /></button>
             <small>Scott can make mistakes.</small>
           </div>
@@ -503,7 +501,6 @@ function InstructorCard() {
 
 function CoursePage({ kind, plan }: { kind: "rw" | "math"; plan: Plan }) {
   const isMath = kind === "math";
-  const full = canAccess(plan, "full-masterclass");
   return (
     <AppShell path={`/masterclass/${kind}`} plan={plan} flush>
       <section className={`course-hero ${isMath ? "math" : "rw"}`}>
@@ -535,11 +532,9 @@ function CoursePage({ kind, plan }: { kind: "rw" | "math"; plan: Plan }) {
         <InstructorCard />
       </section>
       <div className="course-cta">
-        <span>{full ? "Your full Masterclass is ready." : plan === "blueprint" ? "Foundations are included. Upgrade for the full course." : "Unlock the full course with Pro."}</span>
+        <span>Unlock the full course with Pro.</span>
         <button>View syllabus</button>
-        {!full && (
-          <Link href={planHref("/pricing?highlight=pro", plan)}>Upgrade</Link>
-        )}
+        <Link href={planHref("/pricing?highlight=pro", plan)}>Upgrade</Link>
       </div>
     </AppShell>
   );
@@ -618,7 +613,13 @@ function Bank({ plan }: { plan: Plan }) {
   );
 }
 
-function InfoBanner({ title, text }: { title: string; text: string }) {
+function InfoBanner({
+  title,
+  text,
+}: {
+  title: string;
+  text: React.ReactNode;
+}) {
   return (
     <section className="info-banner">
       <span><Bullseye /></span>
@@ -670,10 +671,10 @@ function Challenges({ plan }: { plan: Plan }) {
 }
 
 const testData = [
-  ["Test 1", "Start"],
-  ["Test 2", "Resume"],
-  ["Test 3", "Start"],
-  ["Test 4", "Resume"],
+  ["Test 1", "Start", "Section 1", "32:00"],
+  ["Test 2", "Resume", "Section 2", "18:40"],
+  ["Test 3", "Start", "Section 1", "32:00"],
+  ["Test 4", "Resume", "Section 2", "27:12"],
 ];
 
 function Tests({ plan }: { plan: Plan }) {
@@ -681,20 +682,23 @@ function Tests({ plan }: { plan: Plan }) {
   return (
     <AppShell path="/tests" plan={plan}>
       <header className="icon-title"><BookOpen /> <h1>Full-length tests</h1></header>
-      <InfoBanner title="Blueprint test disclaimer" text="Calibrated to the recent Digital SAT. Harder than the Bluebook sample — expect a tougher Module 2. Six tests in the set; four shown here." />
+      <InfoBanner
+        title="Blueprint test disclaimer"
+        text={<>Calibrated to the recent Digital SAT. <strong>Harder</strong> than the Bluebook sample — expect a tougher Module 2. Six tests in the set; four shown here.</>}
+      />
       <div className="test-grid">
-        {testData.map(([title, action], index) => {
+        {testData.map(([title, action, section, time], index) => {
           const unlocked = index < included;
           return (
             <section className="test-card" key={title}>
               <div className={`test-preview ${index === 2 ? "gold" : ""}`}>
-                <span><i /><i /><i /><b /></span>
+                <span data-section={section} data-time={time}><i /><i /><i /><b /></span>
               </div>
               <div className="test-card-body">
                 <h2>{title}</h2>
                 <div className="test-badges">
                   <span>Hard</span>
-                  {!unlocked && <em>Pro</em>}
+                  {index > 0 && <em>Pro</em>}
                 </div>
                 {unlocked ? (
                   <button>{action}</button>
@@ -729,7 +733,7 @@ function BankMath({ plan }: { plan: Plan }) {
   const [filtersOpen, setFiltersOpen] = useState(false);
   return (
     <AppShell path="/bank/math" plan={plan}>
-      <div className="bank-math">
+      <div className={`bank-math ${filtersOpen ? "filters-open" : ""}`}>
         <div className="bank-heading">
           <div>
             <Link href={planHref("/bank", plan)}><ChevronLeft /> Back to Question Bank</Link>
@@ -841,6 +845,10 @@ function Runner({ plan, explained }: { plan: Plan; explained: boolean }) {
             </div>
             <div className="answer">
               <span>C</span>
+              <AnswerTable values={[[0, -5], [1, -9], [2, -13]]} />
+            </div>
+            <div className="answer">
+              <span>D</span>
               <AnswerTable values={[[0, 5], [1, 9], [2, 13]]} />
             </div>
           </div>
@@ -945,12 +953,11 @@ function Pricing({ highlight }: { highlight?: string }) {
       <section className="pricing-content">
         <div className="faces"><i /><i /><Bullseye /><i /><i /></div>
         <h1>Everything you need to<br /><span>hit 1500.</span></h1>
-        <p className="social-proof"><b>SR</b><b>AC</b><b>JM</b> Scott&apos;s students: 1580 SAT · Georgia Tech.</p>
+        <p className="social-proof"><b>SR</b><b>AC</b><b>JM</b> Scott’s students. 1580 SAT · Georgia Tech.</p>
         <div className="price-grid">
           <PriceCard name="Blueprint" oldPrice="119" price="69" features={blueprintFeatures} highlighted={highlight === "blueprint"} />
           <PriceCard name="Blueprint Pro" oldPrice="135" price="79" features={proFeatures} pro highlighted={highlight === "pro"} />
         </div>
-        <a className="pricing-book" id="book-scott">Book Scott</a>
       </section>
     </main>
   );
