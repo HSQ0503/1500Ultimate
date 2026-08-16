@@ -17,7 +17,7 @@
   --card: #ffffff;
   --card-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
   --soft-shadow: 0 12px 30px rgba(12, 35, 72, 0.1);
-  --rail-width: 188px;
+  --rail-width: 240px;
 }
 
 * {
@@ -34,7 +34,7 @@ body {
   background: var(--stage);
   color: var(--text);
   font-family: var(--font-ui), sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
 }
 
@@ -76,7 +76,7 @@ h2 {
   align-items: center;
   color: white;
   display: flex;
-  gap: 8px;
+  gap: 10px;
   line-height: 1.05;
 }
 
@@ -84,15 +84,15 @@ h2 {
   color: white;
   display: block;
   font-family: var(--font-display), sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   white-space: nowrap;
 }
 
 .logo small {
   color: var(--sky);
   display: block;
-  font-size: 8px;
-  margin-top: 3px;
+  font-size: 11px;
+  margin-top: 4px;
 }
 
 .logo-mark {
@@ -100,25 +100,25 @@ h2 {
   border: 2px solid var(--electric);
   border-radius: 50%;
   display: inline-flex;
-  height: 18px;
+  height: 26px;
   justify-content: center;
-  width: 18px;
+  width: 26px;
 }
 
 .logo-mark::before {
   border: 2px solid var(--sky);
   border-radius: 50%;
   content: "";
-  height: 9px;
-  width: 9px;
+  height: 13px;
+  width: 13px;
 }
 
 .logo-mark span {
   background: var(--electric);
   border-radius: 50%;
-  height: 3px;
+  height: 4px;
   position: absolute;
-  width: 3px;
+  width: 4px;
 }
 
 .logo-compact strong {
@@ -145,59 +145,108 @@ h2 {
   flex-direction: column;
   height: 100vh;
   left: 0;
-  padding: 15px 10px 10px;
+  padding: 22px 14px 14px;
   position: sticky;
   top: 0;
   z-index: 20;
 }
 
 .rail-logo {
-  margin: 0 7px 12px;
+  margin: 0 10px 18px;
 }
 
-.exam-switcher {
+.blueprint-status {
   align-items: center;
-  background: rgba(255, 255, 255, 0.055);
-  border-radius: 999px;
-  display: grid;
-  font-size: 9px;
-  grid-template-columns: repeat(4, 1fr);
-  margin-bottom: 10px;
-  padding: 3px;
-  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(124, 203, 255, 0.12);
+  border-radius: 14px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 17px;
+  min-height: 64px;
+  padding: 10px;
 }
 
-.exam-switcher span {
-  border-radius: 999px;
-  padding: 5px 0;
-}
-
-.exam-switcher .selected {
+.blueprint-status-icon {
+  align-items: center;
   background: #28517e;
+  border-radius: 11px;
+  color: var(--sky);
+  display: flex;
+  flex: 0 0 auto;
+  height: 38px;
+  justify-content: center;
+  width: 38px;
+}
+
+.blueprint-status-icon svg {
+  height: 19px;
+  width: 19px;
+}
+
+.blueprint-status-copy {
+  display: block;
+  flex: 1;
+  min-width: 0;
+}
+
+.blueprint-status-copy small,
+.blueprint-status-copy strong {
+  display: block;
+}
+
+.blueprint-status-copy small {
+  color: #7f96b6;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.blueprint-status-copy strong {
   color: white;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.blueprint-status em {
+  background: var(--gold);
+  border-radius: 999px;
+  color: #5f4100;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 700;
+  padding: 4px 7px;
+  text-transform: uppercase;
 }
 
 .nav-section {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .nav-section > p {
   color: #5f7595;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.15em;
-  margin: 9px 8px 5px;
+  margin: 12px 10px 7px;
   text-transform: uppercase;
 }
 
 .rail-nav a,
 .rail-footer a {
   align-items: center;
-  border-radius: 8px;
+  border-radius: 10px;
   display: flex;
-  font-size: 11px;
-  gap: 9px;
-  min-height: 28px;
-  padding: 6px 9px;
+  font-size: 14px;
+  gap: 12px;
+  min-height: 42px;
+  padding: 9px 11px;
+}
+
+.rail-nav a svg,
+.rail-footer a svg {
+  height: 18px;
+  width: 18px;
 }
 
 .rail-nav a:hover,
@@ -215,9 +264,9 @@ h2 {
   background: #12528a;
   border-radius: 999px;
   color: var(--sky);
-  font-size: 7px;
+  font-size: 9px;
   font-style: normal;
-  padding: 3px 6px;
+  padding: 4px 7px;
 }
 
 .rail-footer {
@@ -232,18 +281,18 @@ h2 {
   background: var(--gold);
   border-radius: 999px;
   color: #5f4100;
-  font-size: 8px;
+  font-size: 10px;
   font-style: normal;
   font-weight: 700;
-  padding: 2px 6px;
+  padding: 3px 7px;
 }
 
 .profile {
   align-items: center;
   display: flex;
-  gap: 7px;
-  min-height: 32px;
-  padding: 4px 6px;
+  gap: 10px;
+  min-height: 44px;
+  padding: 6px 8px;
 }
 
 .profile .avatar {
@@ -252,21 +301,21 @@ h2 {
   border-radius: 50%;
   color: var(--sky);
   display: flex;
-  font-size: 9px;
-  height: 21px;
+  font-size: 11px;
+  height: 30px;
   justify-content: center;
-  width: 21px;
+  width: 30px;
 }
 
 .profile span:nth-child(2) {
   color: #d6dfec;
   flex: 1;
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .app-main {
   min-width: 0;
-  padding: 8px 23px 24px;
+  padding: 16px 34px 40px;
   position: relative;
 }
 
@@ -275,15 +324,15 @@ h2 {
 }
 
 .page-pad {
-  padding: 8px 23px 24px;
+  padding: 16px 34px 40px;
 }
 
 .page-top {
   align-items: center;
   display: flex;
-  height: 35px;
+  height: 48px;
   justify-content: space-between;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .search {
@@ -292,10 +341,10 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 999px;
   display: flex;
-  gap: 7px;
-  height: 29px;
-  padding: 0 12px;
-  width: 224px;
+  gap: 9px;
+  height: 38px;
+  padding: 0 15px;
+  width: 292px;
 }
 
 .search svg {
@@ -305,7 +354,7 @@ h2 {
 .search input {
   background: transparent;
   border: 0;
-  font-size: 11px;
+  font-size: 13px;
   outline: 0;
   width: 100%;
 }
@@ -316,7 +365,7 @@ h2 {
 
 .top-signals {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .top-signals span {
@@ -326,10 +375,10 @@ h2 {
   border-radius: 999px;
   color: var(--ink);
   display: flex;
-  font-size: 10px;
-  gap: 4px;
-  height: 24px;
-  padding: 0 10px;
+  font-size: 12px;
+  gap: 5px;
+  height: 32px;
+  padding: 0 13px;
 }
 
 .top-signals span:first-child svg {
@@ -346,19 +395,19 @@ h2 {
 .icon-title {
   align-items: center;
   display: flex;
-  gap: 10px;
-  margin: 10px 0 12px;
+  gap: 12px;
+  margin: 18px 0;
 }
 
 .icon-title > svg {
   color: var(--electric);
-  height: 22px;
-  width: 22px;
+  height: 27px;
+  width: 27px;
 }
 
 .icon-title h1 {
   color: var(--ink);
-  font-size: 27px;
+  font-size: 32px;
   line-height: 1;
   margin: 0;
 }
@@ -385,11 +434,11 @@ h2 {
   border-radius: 999px;
   color: var(--ink);
   display: inline-flex;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
-  gap: 6px;
-  min-height: 28px;
-  padding: 0 13px;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 16px;
 }
 
 .bullseye {
@@ -712,8 +761,8 @@ h2 {
   background: #12346b;
   color: #dce7f5;
   display: flex;
-  font-size: 10px;
-  height: 29px;
+  font-size: 13px;
+  height: 42px;
   justify-content: center;
   position: relative;
 }
@@ -725,21 +774,21 @@ h2 {
   color: var(--ink);
   display: inline-flex;
   font-weight: 600;
-  gap: 3px;
-  margin-left: 12px;
-  padding: 4px 10px;
+  gap: 5px;
+  margin-left: 16px;
+  padding: 7px 14px;
 }
 
 .home-grid {
   display: grid;
-  gap: 18px;
-  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) 310px;
 }
 
 .home-grid > div > h1 {
   color: var(--ink);
-  font-size: 26px;
-  margin: 4px 0 16px;
+  font-size: 34px;
+  margin: 10px 0 22px;
 }
 
 .create-plan-card,
@@ -763,29 +812,29 @@ h2 {
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  height: 224px;
+  height: 310px;
   justify-content: center;
 }
 
 .plan-dots {
   align-items: center;
   display: flex;
-  gap: 8px;
-  height: 60px;
+  gap: 11px;
+  height: 78px;
 }
 
 .plan-dots i {
   background: var(--sky);
   border-radius: 999px;
   display: block;
-  height: 40px;
-  width: 36px;
+  height: 52px;
+  width: 46px;
 }
 
 .plan-dots i:nth-child(2) {
   background: var(--electric);
-  height: 52px;
-  width: 44px;
+  height: 68px;
+  width: 57px;
 }
 
 .plan-dots i:nth-child(3) {
@@ -794,52 +843,54 @@ h2 {
 
 .plan-dots i:nth-child(4) {
   background: var(--navy);
-  height: 48px;
-  width: 40px;
+  height: 62px;
+  width: 52px;
 }
 
 .create-plan-card h2 {
-  font-size: 22px;
-  margin: 7px 0 4px;
+  font-size: 28px;
+  margin: 12px 0 6px;
 }
 
 .create-plan-card p {
-  margin: 0 0 13px;
+  font-size: 15px;
+  margin: 0 0 18px;
 }
 
 .create-plan-card .electric-button {
-  height: 35px;
-  padding: 0 18px;
+  font-size: 14px;
+  height: 46px;
+  padding: 0 25px;
 }
 
 .stats-grid {
   display: grid;
-  gap: 10px;
+  gap: 14px;
   grid-template-columns: repeat(4, 1fr);
 }
 
 .home-stats {
-  margin-top: 13px;
+  margin-top: 18px;
 }
 
 .stat-card {
   border-radius: 13px;
-  height: 56px;
+  height: 82px;
   overflow: hidden;
-  padding: 10px 11px;
+  padding: 14px 15px;
   position: relative;
 }
 
 .stat-card small {
   display: block;
-  font-size: 9px;
-  margin-bottom: 2px;
+  font-size: 12px;
+  margin-bottom: 4px;
 }
 
 .stat-card > strong {
   display: block;
   font-family: var(--font-display), sans-serif;
-  font-size: 20px;
+  font-size: 26px;
 }
 
 .stat-card button {
@@ -847,7 +898,7 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--ink);
-  font-size: 8px;
+  font-size: 11px;
   margin-top: 5px;
   padding: 4px 8px;
   position: relative;
@@ -869,27 +920,27 @@ h2 {
 .home-side {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
 .countdown-card,
 .score-card,
 .upsell-card {
-  border-radius: 15px;
-  padding: 13px;
+  border-radius: 17px;
+  padding: 18px;
 }
 
 .countdown-card small,
 .countdown-card span {
   display: block;
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .countdown-card strong {
   display: block;
   font-family: var(--font-display), sans-serif;
-  font-size: 20px;
-  margin: 3px 0;
+  font-size: 26px;
+  margin: 5px 0;
 }
 
 .countdown-card span {
@@ -900,9 +951,9 @@ h2 {
   background: none;
   border: 0;
   color: var(--electric);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 600;
-  margin-top: 5px;
+  margin-top: 8px;
   padding: 0;
 }
 
@@ -915,17 +966,17 @@ h2 {
 .score-card strong {
   display: block;
   font-family: var(--font-display), sans-serif;
-  font-size: 16px;
+  font-size: 22px;
 }
 
 .score-card small {
   color: var(--muted);
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .score-card .bullseye {
-  height: 42px;
-  width: 42px;
+  height: 52px;
+  width: 52px;
 }
 
 .upsell-card {
@@ -935,19 +986,19 @@ h2 {
 }
 
 .upsell-card h3 {
-  font-size: 12px;
-  margin: 1px 0 10px;
+  font-size: 16px;
+  margin: 1px 0 14px;
 }
 
 .upsell-card ul {
   list-style: none;
-  margin: 0 0 11px;
+  margin: 0 0 15px;
   padding: 0;
 }
 
 .upsell-card li {
-  font-size: 9px;
-  margin: 5px 0;
+  font-size: 12px;
+  margin: 8px 0;
 }
 
 .upsell-card li::before {
@@ -962,16 +1013,16 @@ h2 {
   border-radius: 999px;
   color: var(--ink);
   display: inline-flex;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 600;
-  gap: 3px;
-  padding: 7px 12px;
+  gap: 5px;
+  padding: 10px 16px;
 }
 
 /* chat */
 .chat-layout {
   display: grid;
-  grid-template-columns: 176px 1fr;
+  grid-template-columns: 230px 1fr;
   min-height: 100vh;
 }
 
@@ -980,7 +1031,7 @@ h2 {
   border-right: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  padding: 13px 12px;
+  padding: 18px 16px;
 }
 
 .chat-history > button {
@@ -988,22 +1039,22 @@ h2 {
   border: 0;
   border-radius: 8px;
   color: var(--text);
-  font-size: 11px;
-  min-height: 30px;
-  padding: 0 7px;
+  font-size: 14px;
+  min-height: 42px;
+  padding: 0 10px;
   text-align: left;
 }
 
 .chat-history .electric-button {
   color: white;
-  height: 33px;
-  margin-bottom: 10px;
+  height: 42px;
+  margin-bottom: 14px;
   text-align: center;
 }
 
 .chat-history small {
   color: var(--muted);
-  font-size: 8px;
+  font-size: 11px;
   margin: auto 7px 0;
 }
 
@@ -1011,7 +1062,7 @@ h2 {
   display: flex;
   justify-content: center;
   min-width: 0;
-  padding: 120px 24px 80px;
+  padding: 140px 32px 100px;
   position: relative;
 }
 
@@ -1019,18 +1070,18 @@ h2 {
   align-items: center;
   display: flex;
   flex-direction: column;
-  width: min(420px, 100%);
+  width: min(540px, 100%);
 }
 
 .chat-center h1 {
-  font-size: 21px;
-  margin: 18px 0;
+  font-size: 28px;
+  margin: 22px 0;
 }
 
 .prompt-list {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 10px;
   width: 100%;
 }
 
@@ -1041,8 +1092,9 @@ h2 {
   border-radius: 12px;
   box-shadow: var(--card-shadow);
   display: flex;
-  min-height: 38px;
-  padding: 0 13px;
+  font-size: 14px;
+  min-height: 52px;
+  padding: 0 17px;
   text-align: left;
 }
 
@@ -1061,16 +1113,17 @@ h2 {
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
-  width: min(575px, calc(100% - 48px));
+  width: min(680px, calc(100% - 64px));
 }
 
 .chat-composer input {
   background: #f7f8fa;
   border: 0;
   border-radius: 999px;
-  height: 42px;
+  font-size: 14px;
+  height: 52px;
   outline-color: var(--electric);
-  padding: 0 50px 0 16px;
+  padding: 0 62px 0 20px;
   width: 100%;
 }
 
@@ -1081,18 +1134,18 @@ h2 {
   border-radius: 50%;
   color: white;
   display: flex;
-  height: 30px;
+  height: 40px;
   justify-content: center;
   position: absolute;
   right: 6px;
   top: 6px;
-  width: 30px;
+  width: 40px;
 }
 
 .chat-composer small {
   color: #b6bdc8;
   display: block;
-  font-size: 9px;
+  font-size: 11px;
   margin-top: 7px;
   text-align: center;
 }
@@ -1102,15 +1155,15 @@ h2 {
   align-items: center;
   background: var(--ice);
   display: flex;
-  height: 38px;
+  height: 52px;
   justify-content: space-between;
-  margin: -8px -23px 0;
-  padding: 0 23px;
+  margin: -16px -34px 0;
+  padding: 0 34px;
 }
 
 .planner-banner span {
   color: #26486f;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .planner-banner button {
@@ -1118,25 +1171,25 @@ h2 {
   border: 0;
   border-radius: 999px;
   color: white;
-  font-size: 10px;
-  padding: 6px 12px;
+  font-size: 13px;
+  padding: 8px 15px;
 }
 
 .planner-page {
-  padding-top: 19px;
+  padding-top: 26px;
 }
 
 .planner-title {
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 22px;
 }
 
 .planner-title h1 {
   align-items: center;
   display: flex;
-  font-size: 26px;
+  font-size: 32px;
   gap: 10px;
   margin: 0 0 15px;
 }
@@ -1148,13 +1201,13 @@ h2 {
 }
 
 .planner-title span {
-  font-size: 10px;
+  font-size: 13px;
   margin-right: 33px;
 }
 
 .planner-title strong {
   font-family: var(--font-display), sans-serif;
-  font-size: 17px;
+  font-size: 21px;
 }
 
 .planner-title > div:last-child {
@@ -1176,9 +1229,9 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 50%;
   display: flex;
-  height: 26px;
+  height: 36px;
   justify-content: center;
-  width: 26px;
+  width: 36px;
 }
 
 .planner-title > div:last-child svg {
@@ -1187,7 +1240,7 @@ h2 {
 
 .planner-list {
   border-radius: 15px;
-  min-height: 484px;
+  min-height: 560px;
   overflow: hidden;
 }
 
@@ -1195,10 +1248,10 @@ h2 {
   align-items: center;
   border-bottom: 1px solid var(--line);
   display: grid;
-  gap: 12px;
-  grid-template-columns: 58px 17px 1fr auto;
-  min-height: 74px;
-  padding: 0 17px;
+  gap: 15px;
+  grid-template-columns: 76px 20px 1fr auto;
+  min-height: 92px;
+  padding: 0 22px;
 }
 
 .planner-row:last-child {
@@ -1206,20 +1259,20 @@ h2 {
 }
 
 .planner-row .day {
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .empty-check {
   border: 1px solid #cfd6df;
   border-radius: 50%;
   display: inline-block;
-  height: 14px;
-  width: 14px;
+  height: 17px;
+  width: 17px;
 }
 
 .planner-row strong {
   display: block;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .planner-row strong span {
@@ -1230,22 +1283,22 @@ h2 {
 .planner-row small {
   color: var(--muted);
   display: block;
-  font-size: 9px;
+  font-size: 12px;
   margin-top: 4px;
 }
 
 .planner-row .electric-button {
-  height: 27px;
-  padding: 0 14px;
+  height: 38px;
+  padding: 0 18px;
 }
 
 /* courses */
 .course-hero {
   background: linear-gradient(110deg, #14396f 0%, #2e88ca 74%, #55afe9 100%);
   color: white;
-  height: 182px;
+  height: 240px;
   overflow: hidden;
-  padding: 16px 26px;
+  padding: 24px 34px;
   position: relative;
 }
 
@@ -1253,7 +1306,7 @@ h2 {
   align-items: center;
   color: #d5e5f5;
   display: flex;
-  font-size: 9px;
+  font-size: 12px;
   gap: 3px;
 }
 
@@ -1264,15 +1317,15 @@ h2 {
 
 .course-hero h1 {
   color: white;
-  font-size: 26px;
-  margin: 29px 0 0;
+  font-size: 34px;
+  margin: 38px 0 0;
 }
 
 .course-tabs {
   bottom: 0;
   display: flex;
-  gap: 25px;
-  left: 26px;
+  gap: 32px;
+  left: 34px;
   position: absolute;
 }
 
@@ -1283,10 +1336,10 @@ h2 {
   border-bottom: 3px solid transparent;
   color: #a7bdd8;
   display: flex;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   gap: 6px;
-  height: 31px;
+  height: 44px;
 }
 
 .course-tabs button.active {
@@ -1353,21 +1406,21 @@ h2 {
 
 .course-body {
   display: grid;
-  gap: 40px;
-  grid-template-columns: 1fr 234px;
-  padding: 16px 26px;
+  gap: 52px;
+  grid-template-columns: 1fr 300px;
+  padding: 28px 34px;
 }
 
 .course-copy h2 {
-  font-size: 21px;
-  margin: 0 0 13px;
+  font-size: 28px;
+  margin: 0 0 17px;
 }
 
 .course-copy p {
-  font-size: 11px;
+  font-size: 15px;
   line-height: 1.65;
   margin: 0 0 8px;
-  max-width: 540px;
+  max-width: 680px;
 }
 
 .instructor-card {
@@ -1376,15 +1429,15 @@ h2 {
   display: flex;
   flex-direction: column;
   margin-top: -43px;
-  min-height: 221px;
-  padding: 15px 17px;
+  min-height: 285px;
+  padding: 20px 22px;
   position: relative;
   z-index: 2;
 }
 
 .instructor-card h3 {
   align-self: flex-start;
-  font-size: 12px;
+  font-size: 15px;
   margin: 0 0 11px;
 }
 
@@ -1414,18 +1467,18 @@ h2 {
 }
 
 .instructor-card > strong {
-  font-size: 12px;
+  font-size: 15px;
   margin-top: 8px;
 }
 
 .instructor-card > a {
   color: var(--electric);
-  font-size: 9px;
+  font-size: 12px;
   margin: 5px 0 8px;
 }
 
 .instructor-card p {
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.45;
   margin: 0;
   text-align: center;
@@ -1477,16 +1530,16 @@ h2 {
 /* colorful subject cards */
 .subject-grid {
   display: grid;
-  gap: 12px;
+  gap: 18px;
   grid-template-columns: 1fr 1fr;
 }
 
 .subject-card {
   border-radius: 16px;
   color: white;
-  height: 163px;
+  height: 220px;
   overflow: hidden;
-  padding: 18px;
+  padding: 24px;
   position: relative;
 }
 
@@ -1500,12 +1553,12 @@ h2 {
 
 .subject-card h2 {
   color: white;
-  font-size: 21px;
-  margin: 0 0 5px;
+  font-size: 28px;
+  margin: 0 0 7px;
 }
 
 .subject-card p {
-  font-size: 10px;
+  font-size: 14px;
   margin: 0;
 }
 
@@ -1513,13 +1566,13 @@ h2 {
   align-items: center;
   background: white;
   border-radius: 999px;
-  bottom: 15px;
+  bottom: 21px;
   color: var(--ink);
   display: flex;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
-  gap: 2px;
-  padding: 7px 13px;
+  gap: 4px;
+  padding: 10px 17px;
   position: absolute;
   z-index: 4;
 }
@@ -1655,14 +1708,14 @@ h2 {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin: 13px 1px 7px;
+  margin: 20px 1px 10px;
 }
 
 .section-label span {
   align-items: center;
   color: var(--ink);
   display: flex;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   gap: 6px;
 }
@@ -1678,17 +1731,17 @@ h2 {
   border: 0;
   color: var(--electric);
   display: flex;
-  font-size: 9px;
+  font-size: 12px;
   gap: 2px;
 }
 
 .analytics .stat-card {
-  height: 106px;
-  padding: 13px;
+  height: 132px;
+  padding: 17px;
 }
 
 .analytics .stat-card > strong {
-  font-size: 26px;
+  font-size: 32px;
   margin-top: 5px;
 }
 
@@ -1710,9 +1763,9 @@ h2 {
   align-items: center;
   border-radius: 14px;
   display: flex;
-  gap: 10px;
-  min-height: 59px;
-  padding: 10px 13px;
+  gap: 14px;
+  min-height: 78px;
+  padding: 13px 17px;
 }
 
 .info-banner > span {
@@ -1720,9 +1773,9 @@ h2 {
   background: var(--ice);
   border-radius: 11px;
   display: flex;
-  height: 34px;
+  height: 46px;
   justify-content: center;
-  width: 34px;
+  width: 46px;
 }
 
 .info-banner .bullseye {
@@ -1744,11 +1797,11 @@ h2 {
 }
 
 .info-banner strong {
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .info-banner p {
-  font-size: 10px;
+  font-size: 13px;
   margin: 3px 0 0;
 }
 
@@ -1759,7 +1812,7 @@ h2 {
 
 .rush-cards .subject-card,
 .challenge-cards .subject-card {
-  height: 161px;
+  height: 220px;
 }
 
 .section-label.simple {
@@ -1772,8 +1825,8 @@ h2 {
   display: grid;
   gap: 15px;
   grid-template-columns: 1fr repeat(4, auto) 1fr;
-  min-height: 52px;
-  padding: 8px 14px;
+  min-height: 72px;
+  padding: 11px 18px;
 }
 
 .recent-session > div strong,
@@ -1782,17 +1835,17 @@ h2 {
 }
 
 .recent-session > div strong {
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .recent-session > div small {
   color: var(--muted);
-  font-size: 9px;
+  font-size: 12px;
   margin-top: 2px;
 }
 
 .recent-session > span {
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .recent-session > span svg {
@@ -1808,9 +1861,9 @@ h2 {
   border: 0;
   border-radius: 999px;
   display: flex;
-  font-size: 9px;
+  font-size: 12px;
   justify-self: end;
-  padding: 7px 11px;
+  padding: 9px 14px;
 }
 
 .recent-session > button svg {
@@ -1829,14 +1882,14 @@ h2 {
 /* tests */
 .test-grid {
   display: grid;
-  gap: 10px;
+  gap: 16px;
   grid-template-columns: 1fr 1fr;
-  margin-top: 10px;
+  margin-top: 16px;
 }
 
 .test-card {
   border-radius: 14px;
-  min-height: 249px;
+  min-height: 330px;
   overflow: hidden;
 }
 
@@ -1844,7 +1897,7 @@ h2 {
   align-items: flex-end;
   background: #e8f5ff;
   display: flex;
-  height: 95px;
+  height: 138px;
   justify-content: center;
 }
 
@@ -1856,10 +1909,10 @@ h2 {
   background: white;
   box-shadow: 0 -3px 10px rgba(12, 35, 72, .05);
   display: block;
-  height: 82px;
-  padding-top: 23px;
+  height: 118px;
+  padding-top: 31px;
   position: relative;
-  width: 168px;
+  width: 230px;
 }
 
 .test-preview > span::before {
@@ -1887,14 +1940,14 @@ h2 {
 .test-preview i:nth-child(3) { width: 60px; }
 
 .test-card-body {
-  padding: 10px 11px;
+  padding: 16px;
   position: relative;
 }
 
 .test-card-body h2 {
   font-family: var(--font-display), sans-serif;
-  font-size: 14px;
-  margin: 0 0 8px;
+  font-size: 19px;
+  margin: 0 0 12px;
 }
 
 .test-card-body > button:not(.more),
@@ -1905,10 +1958,10 @@ h2 {
   border-radius: 999px;
   color: white;
   display: inline-flex;
-  font-size: 9px;
+  font-size: 12px;
   gap: 4px;
-  min-height: 26px;
-  padding: 0 13px;
+  min-height: 38px;
+  padding: 0 17px;
 }
 
 .test-card-body > a {
@@ -1925,8 +1978,8 @@ h2 {
   display: flex;
   gap: 5px;
   position: absolute;
-  right: 11px;
-  top: 10px;
+  right: 16px;
+  top: 16px;
 }
 
 .test-badges span,
@@ -1934,9 +1987,9 @@ h2 {
   background: var(--ice);
   border-radius: 999px;
   color: #3f6e94;
-  font-size: 8px;
+  font-size: 11px;
   font-style: normal;
-  padding: 3px 6px;
+  padding: 4px 8px;
 }
 
 .test-badges em {
@@ -1950,11 +2003,11 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 50%;
   display: inline-flex;
-  height: 26px;
+  height: 38px;
   justify-content: center;
   margin-left: 5px;
   vertical-align: top;
-  width: 26px;
+  width: 38px;
 }
 
 .test-card-body .more svg {
@@ -1972,7 +2025,7 @@ h2 {
   align-items: center;
   color: var(--muted);
   display: flex;
-  font-size: 9px;
+  font-size: 12px;
   gap: 2px;
 }
 
@@ -1982,8 +2035,8 @@ h2 {
 }
 
 .bank-heading h1 {
-  font-size: 32px;
-  margin: 6px 0 7px;
+  font-size: 38px;
+  margin: 8px 0 12px;
 }
 
 .bank-heading .white-pill svg {
@@ -1993,8 +2046,8 @@ h2 {
 
 .filter-row {
   display: flex;
-  gap: 8px;
-  margin-bottom: 12px;
+  gap: 10px;
+  margin-bottom: 16px;
   position: relative;
 }
 
@@ -2005,11 +2058,11 @@ h2 {
   border-radius: 999px;
   color: var(--ink);
   display: flex;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   gap: 7px;
-  height: 27px;
-  padding: 0 11px;
+  height: 38px;
+  padding: 0 14px;
 }
 
 .filter-row > button.open {
@@ -2046,10 +2099,10 @@ h2 {
   border-radius: 999px;
   color: var(--ink);
   display: flex;
-  font-size: 9px;
+  font-size: 12px;
   gap: 7px;
-  height: 27px;
-  padding: 0 11px;
+  height: 38px;
+  padding: 0 14px;
 }
 
 .practice-all {
@@ -2057,17 +2110,17 @@ h2 {
   border-radius: 14px;
   display: flex;
   justify-content: space-between;
-  min-height: 59px;
-  padding: 10px 15px;
+  min-height: 78px;
+  padding: 13px 19px;
 }
 
 .practice-all strong {
   display: block;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .practice-all p {
-  font-size: 9px;
+  font-size: 12px;
   margin: 3px 0 0;
 }
 
@@ -2075,33 +2128,33 @@ h2 {
   background: var(--electric);
   border-radius: 999px;
   color: white;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
-  padding: 8px 13px;
+  padding: 10px 17px;
 }
 
 .skills-head {
   color: var(--muted);
   display: grid;
-  font-size: 8px;
-  grid-template-columns: 1fr 140px 88px;
+  font-size: 10px;
+  grid-template-columns: 1fr 180px 110px;
   letter-spacing: .08em;
-  padding: 14px 5px 5px;
+  padding: 18px 7px 7px;
   text-transform: uppercase;
 }
 
 .skills-list h3 {
-  font-size: 12px;
-  margin: 9px 5px 5px;
+  font-size: 15px;
+  margin: 13px 7px 7px;
 }
 
 .skill-row {
   align-items: center;
   display: grid;
   gap: 8px;
-  grid-template-columns: 14px 1fr 90px 47px 74px;
-  min-height: 34px;
-  padding: 0 5px;
+  grid-template-columns: 17px 1fr 120px 62px 90px;
+  min-height: 46px;
+  padding: 0 7px;
 }
 
 .skill-row:hover {
@@ -2111,7 +2164,7 @@ h2 {
 
 .skill-row > span:nth-child(2) {
   color: var(--ink);
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .skill-row .progress {
@@ -2128,12 +2181,12 @@ h2 {
 
 .skill-row small {
   color: var(--text);
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .skill-row em {
   color: var(--ink);
-  font-size: 9px;
+  font-size: 12px;
   font-style: normal;
   justify-self: end;
 }
@@ -2155,7 +2208,7 @@ h2 {
 .runner {
   background: var(--stage);
   min-height: 100vh;
-  padding: 43px 0 51px;
+  padding: 58px 0 68px;
 }
 
 .runner-top {
@@ -2163,9 +2216,9 @@ h2 {
   background: white;
   border-bottom: 1px solid var(--line);
   display: flex;
-  height: 43px;
+  height: 58px;
   left: 0;
-  padding: 0 20px;
+  padding: 0 26px;
   position: fixed;
   right: 0;
   top: 0;
@@ -2177,10 +2230,10 @@ h2 {
   background: none;
   border: 0;
   display: flex;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
-  gap: 5px;
-  margin-right: 15px;
+  gap: 7px;
+  margin-right: 20px;
 }
 
 .runner-top svg {
@@ -2203,17 +2256,17 @@ h2 {
 
 .runner-top > div strong {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .runner-top > div small {
   color: #b3bbc6;
-  font-size: 7px;
+  font-size: 10px;
 }
 
 .runner-top nav {
   display: flex;
-  gap: 24px;
+  gap: 30px;
   margin-left: auto;
 }
 
@@ -2224,29 +2277,29 @@ h2 {
   color: var(--text);
   display: flex;
   flex-direction: column;
-  font-size: 7px;
+  font-size: 10px;
   gap: 2px;
 }
 
 .question-area {
   display: grid;
-  grid-template-columns: minmax(620px, 708px) 304px;
-  min-height: calc(100vh - 94px);
+  grid-template-columns: minmax(720px, 840px) 390px;
+  min-height: calc(100vh - 126px);
 }
 
 .runner:not(.explained) .question-area {
-  grid-template-columns: 708px;
+  grid-template-columns: 840px;
 }
 
 .question-content {
-  padding: 13px 0 45px 64px;
+  padding: 20px 0 56px 82px;
 }
 
 .question-meta {
   align-items: center;
   display: grid;
-  grid-template-columns: 30px 1fr auto;
-  margin-bottom: 12px;
+  grid-template-columns: 38px 1fr auto;
+  margin-bottom: 16px;
 }
 
 .question-meta > b {
@@ -2255,10 +2308,10 @@ h2 {
   border-radius: 8px;
   color: white;
   display: flex;
-  font-size: 16px;
-  height: 29px;
+  font-size: 20px;
+  height: 37px;
   justify-content: center;
-  width: 28px;
+  width: 36px;
 }
 
 .question-meta button {
@@ -2266,7 +2319,7 @@ h2 {
   background: none;
   border: 0;
   display: flex;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   gap: 6px;
 }
@@ -2283,25 +2336,25 @@ h2 {
 
 .question-content > .eyebrow {
   color: var(--muted);
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
 
 .question-content > h1 {
   font-family: Georgia, serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.35;
   margin: 7px 0 18px;
-  max-width: 548px;
+  max-width: 680px;
 }
 
 .answers {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 15px;
   padding-bottom: 40px;
 }
 
@@ -2311,9 +2364,9 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 12px;
   display: flex;
-  height: 158px;
+  height: 190px;
   justify-content: center;
-  max-width: 438px;
+  max-width: 540px;
   position: relative;
 }
 
@@ -2323,13 +2376,13 @@ h2 {
   border: 1px solid #d5dbe4;
   border-radius: 50%;
   display: flex;
-  font-size: 10px;
-  height: 21px;
+  font-size: 13px;
+  height: 28px;
   justify-content: center;
   left: 11px;
   position: absolute;
   top: 11px;
-  width: 21px;
+  width: 28px;
 }
 
 .answer table,
@@ -2337,7 +2390,7 @@ h2 {
   border-collapse: collapse;
   color: var(--ink);
   font-family: Georgia, serif;
-  font-size: 12px;
+  font-size: 15px;
   text-align: center;
   width: 116px;
 }
@@ -2347,7 +2400,7 @@ h2 {
 .correct-answer td,
 .correct-answer th {
   border: 1px solid #cbd2dc;
-  height: 26px;
+  height: 33px;
 }
 
 .answer th,
@@ -2388,8 +2441,8 @@ h2 {
   border: 0;
   border-radius: 999px;
   color: white;
-  font-size: 9px;
-  padding: 7px 13px;
+  font-size: 12px;
+  padding: 9px 16px;
   position: absolute;
   right: 13px;
 }
@@ -2602,9 +2655,9 @@ h2 {
   bottom: 0;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  height: 51px;
+  height: 68px;
   left: 0;
-  padding: 0 15px;
+  padding: 0 20px;
   position: fixed;
   right: 0;
   z-index: 10;
@@ -2617,11 +2670,11 @@ h2 {
   border-radius: 999px;
   color: var(--ink);
   display: inline-flex;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 600;
   gap: 5px;
-  height: 29px;
-  padding: 0 12px;
+  height: 40px;
+  padding: 0 15px;
 }
 
 .runner-bottom button svg {
@@ -2661,7 +2714,7 @@ h2 {
   background: #061326;
   color: #aebbd0;
   min-height: 100vh;
-  padding-top: 25px;
+  padding-top: 36px;
 }
 
 .sale-banner {
@@ -2669,10 +2722,10 @@ h2 {
   background: var(--gold);
   color: var(--ink);
   display: flex;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   gap: 8px;
-  height: 25px;
+  height: 36px;
   justify-content: center;
   left: 0;
   position: fixed;
@@ -2697,19 +2750,19 @@ h2 {
   align-items: center;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  height: 53px;
-  padding: 0 29px;
+  height: 72px;
+  padding: 0 38px;
 }
 
 .pricing-page > header .logo-compact strong {
   color: white;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .pricing-page > header nav {
   display: flex;
-  font-size: 10px;
-  gap: 25px;
+  font-size: 13px;
+  gap: 32px;
 }
 
 .pricing-page > header nav a:last-child {
@@ -2720,15 +2773,15 @@ h2 {
   background: white;
   border-radius: 999px;
   color: var(--ink);
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   justify-self: end;
-  padding: 8px 14px;
+  padding: 10px 18px;
 }
 
 .pricing-content {
   margin: 0 auto;
-  max-width: 720px;
+  max-width: 920px;
   padding: 3px 0 30px;
   text-align: center;
 }
@@ -2799,7 +2852,7 @@ h2 {
 
 .pricing-content > h1 {
   color: white;
-  font-size: 31px;
+  font-size: 42px;
   line-height: 1.02;
   margin: 13px 0 12px;
 }
@@ -2809,7 +2862,7 @@ h2 {
 }
 
 .social-proof {
-  font-size: 9px;
+  font-size: 12px;
   margin-bottom: 27px;
 }
 
@@ -2839,8 +2892,8 @@ h2 {
 .price-card {
   border: 1px solid #284160;
   border-radius: 17px;
-  min-height: 320px;
-  padding: 15px 16px 45px;
+  min-height: 410px;
+  padding: 22px 22px 60px;
   position: relative;
 }
 
@@ -2855,7 +2908,7 @@ h2 {
 
 .price-card h2 {
   color: white;
-  font-size: 18px;
+  font-size: 24px;
   margin: 0 0 10px;
 }
 
@@ -2864,7 +2917,7 @@ h2 {
   background: var(--gold);
   border-radius: 999px;
   color: #5e4200;
-  font-size: 8px;
+  font-size: 11px;
   font-style: normal;
   font-weight: 700;
   padding: 4px 7px;
@@ -2888,21 +2941,21 @@ h2 {
 
 .price s {
   color: #6f7e94;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .price strong {
   color: white;
   font-family: var(--font-display), sans-serif;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .price span {
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .price-card > p {
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.45;
   margin: 6px 0 10px;
 }
@@ -2916,9 +2969,9 @@ h2 {
 .price-card li {
   align-items: center;
   display: flex;
-  font-size: 9px;
+  font-size: 12px;
   gap: 8px;
-  margin: 7px 0;
+  margin: 10px 0;
 }
 
 .price-card li svg {
@@ -2941,9 +2994,9 @@ h2 {
   border-radius: 999px;
   bottom: 12px;
   color: white;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 600;
-  height: 34px;
+  height: 46px;
   left: 16px;
   position: absolute;
   right: 16px;
@@ -2963,7 +3016,7 @@ h2 {
 .pricing-book {
   color: var(--gold);
   display: inline-block;
-  font-size: 10px;
+  font-size: 13px;
   margin-top: 13px;
 }
 
@@ -2992,6 +3045,43 @@ h2 {
   padding: 9px 15px;
 }
 
+@media (min-width: 801px) and (max-height: 780px) {
+  .rail {
+    padding-bottom: 10px;
+    padding-top: 14px;
+  }
+
+  .rail-logo {
+    margin-bottom: 12px;
+  }
+
+  .blueprint-status {
+    margin-bottom: 10px;
+    min-height: 56px;
+    padding: 8px 10px;
+  }
+
+  .nav-section {
+    margin-bottom: 7px;
+  }
+
+  .nav-section > p {
+    margin-bottom: 4px;
+    margin-top: 8px;
+  }
+
+  .rail-nav a,
+  .rail-footer a {
+    min-height: 38px;
+    padding-bottom: 7px;
+    padding-top: 7px;
+  }
+
+  .profile {
+    min-height: 40px;
+  }
+}
+
 @media (max-width: 800px) {
   :root {
     --rail-width: 72px;
@@ -3004,7 +3094,8 @@ h2 {
 
   .rail .logo strong,
   .rail .logo small,
-  .exam-switcher span:not(.selected),
+  .blueprint-status-copy,
+  .blueprint-status em,
   .rail-nav a span,
   .rail-footer a span,
   .rail .new-chip,
@@ -3014,19 +3105,19 @@ h2 {
   }
 
   .rail-logo,
+  .blueprint-status,
   .rail-nav a,
   .rail-footer a,
   .profile {
     justify-content: center;
   }
 
-  .exam-switcher {
-    display: flex;
-    justify-content: center;
-  }
-
-  .exam-switcher .selected {
-    padding: 5px 12px;
+  .blueprint-status {
+    background: transparent;
+    border: 0;
+    gap: 0;
+    min-height: 40px;
+    padding: 0;
   }
 
   .nav-section > p {
@@ -3072,6 +3163,25 @@ h2 {
 }
 
 @media (max-width: 620px) {
+  .pro-strip {
+    font-size: 10px;
+    height: 54px;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .pro-strip span {
+    line-height: 1.3;
+    max-width: 160px;
+  }
+
+  .pro-strip a {
+    flex: 0 0 auto;
+    font-size: 11px;
+    margin-left: 8px;
+    padding: 7px 10px;
+  }
+
   .app-main {
     padding-left: 13px;
     padding-right: 13px;
@@ -3094,6 +3204,12 @@ h2 {
 
   .home-side {
     grid-template-columns: 1fr;
+  }
+
+  .create-plan-card {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
   }
 
   .chat-layout {

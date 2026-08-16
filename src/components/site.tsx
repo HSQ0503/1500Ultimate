@@ -123,18 +123,24 @@ const navSections = [
 function Rail({ path, plan }: { path: string; plan: Plan }) {
   const active = (href: string) =>
     href === "/" ? path === "/" : path.startsWith(href);
+  const planName =
+    plan === "pro" ? "Pro" : plan === "blueprint" ? "Blueprint" : "Free";
 
   return (
     <aside className="rail">
       <Link href={planHref("/", plan)} className="rail-logo">
         <Logo />
       </Link>
-      <div className="exam-switcher" aria-label="Exam">
-        <span className="selected">SAT</span>
-        <span>ACT</span>
-        <span>AP</span>
-        <span>IB</span>
-      </div>
+      <section className="blueprint-status" aria-label={`${planName} Blueprint progress`}>
+        <span className="blueprint-status-icon" aria-hidden="true">
+          <Target />
+        </span>
+        <span className="blueprint-status-copy">
+          <small>Your Blueprint</small>
+          <strong>1320 → 1500 goal</strong>
+        </span>
+        <em>{planName}</em>
+      </section>
       <nav className="rail-nav">
         {navSections.map((section, index) => (
           <div className="nav-section" key={section.title ?? index}>
